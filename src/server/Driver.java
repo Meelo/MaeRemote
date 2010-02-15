@@ -26,7 +26,9 @@ public class Driver {
     }
 
     public void click(int button) {
-        robot.mousePress(buttons[button - 1]);
+        button = buttons[button - 1];
+        robot.mousePress(button);
+        robot.mouseRelease(button);
     }
 
     public void scroll(int amount) {
