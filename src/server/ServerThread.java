@@ -11,6 +11,8 @@ public class ServerThread extends Thread {
 
     private static final String UPDATE_COMMAND = "U";
     private static final String MESSAGE_COMMAND = "M";
+    private static final String CLICK_COMMAND = "C";
+    private static final String SCROLL_COMMAND = "S";
 
     private Socket socket;
     private Engine engine;
@@ -65,6 +67,14 @@ public class ServerThread extends Thread {
             else if (MESSAGE_COMMAND.equals(command)) {
                 // M;character/string
                 engine.sendCharacters(inputArray[1]);
+            }
+            else if (CLICK_COMMAND.equals(command)) {
+                // C;button
+                engine.click(Integer.parseInt(inputArray[1]));
+            }
+            else if (SCROLL_COMMAND.equals(command)) {
+                // S;amount
+                engine.scroll(Integer.parseInt(inputArray[1]));
             }
         }
         catch (Exception e) {

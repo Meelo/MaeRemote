@@ -4,10 +4,13 @@ import java.awt.AWTException;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.Robot;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
 public class Driver {
 
+    private static int[] buttons = { InputEvent.BUTTON1_MASK,
+            InputEvent.BUTTON2_MASK, InputEvent.BUTTON3_MASK };
     private Point lastLocation;
     private Robot robot;
 
@@ -22,6 +25,14 @@ public class Driver {
         robot.mouseMove(lastLocation.x, lastLocation.y);
     }
 
+    public void click(int button) {
+        robot.mousePress(buttons[button - 1]);
+    }
+
+    public void scroll(int amount) {
+        robot.mouseWheel(amount);
+    }
+    
     public void sendCharacters(String string) {
         for (int i = 0; i < string.length(); i++) {
             char letter = string.charAt(i);
