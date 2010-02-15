@@ -8,16 +8,18 @@ import java.awt.event.KeyEvent;
 
 public class Driver {
 
-    private Point startLocation;
+    private Point lastLocation;
     private Robot robot;
 
     public Driver() throws AWTException {
         robot = new Robot();
-        startLocation = MouseInfo.getPointerInfo().getLocation();
+        lastLocation = MouseInfo.getPointerInfo().getLocation();
     }
     
     public void updatePosition(int dx, int dy) {
-        robot.mouseMove(startLocation.x + dx, startLocation.y + dy);
+        lastLocation.x += dx;
+        lastLocation.y += dy;
+        robot.mouseMove(lastLocation.x, lastLocation.y);
     }
 
     public void sendCharacters(String string) {
