@@ -9,11 +9,14 @@ class Client : public QObject
 
 public:
     Client();
-    void connectTo(const QString& hostName, quint16 port);
+    bool connectTo(const QString& hostName, quint16 port);
+    void send(const char* data, qint64 len);
+    void sendMessage(const QByteArray& data);
+    void sendMouseMovement(qint16 dx, qint16 dy);
 private slots:
-
 private:
     QTcpSocket *tcpSocket;
+    static const qint8 separator = 255;
 };
 
 #endif
