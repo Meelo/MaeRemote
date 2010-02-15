@@ -21,6 +21,13 @@ void Client::send(const char* data, qint64 len)
     tcpSocket->flush();
 }
 
+void Client::sendMessage(const QByteArray& data)
+{
+    QByteArray block("M");
+    block.append(separator).append(data);
+    send(block.data(), block.size());
+}
+
 void Client::sendMouseMovement(qint16 dx, qint16 dy)
 {
     std::stringstream block;
@@ -29,15 +36,32 @@ void Client::sendMouseMovement(qint16 dx, qint16 dy)
     block << dx;
     block << separator;
     block << dy;
-    const std::string& movement = block.str();
-    send(movement.c_str(), movement.length());
+    const std::string& data = block.str();
+    send(data.c_str(), data.length());
 }
 
-void Client::sendMessage(const QByteArray& data)
+// The value of button corresponds to the mouse button pressed.
+// Mouse1 = 1, Mouse2 = 2 and Mouse3 = 3.
+void Client::sendClick(qint16 button)
 {
-    QByteArray block("M");
-    block.append(separator).append(data);
-    send(block.data(), block.size());
+    std::stringstream block;
+    block << 'C';
+    block << separator;
+    block << button;
+    send(block);
 }
 
+void Client::sendScroll(qint16 amount)
+{
+    std::stringstream block;
+    block << 'S';
+    block << separator;
+    block << amount;
+    send(block);
+}
 
+void Client::send(const std::stringstream& block)
+{
+    const std::string& data = block.str();
+    send(data.c_str(), data.length());
+}

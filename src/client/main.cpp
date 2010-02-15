@@ -16,6 +16,12 @@ int main(int argc, char *argv[])
 
         client.sendMouseMovement(200, 200);
         std::cout << "Mouse movement sent!" << std::endl;
+
+        client.sendClick(3);
+        std::cout << "Right mouse click sent!" << std::endl;
+
+        client.sendScroll(5);
+        std::cout << "Mouse wheel scroll sent!" << std::endl;
     }
     else {
         std::cout << "Connection failed :(" << std::endl;
