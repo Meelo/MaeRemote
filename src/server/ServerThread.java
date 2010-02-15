@@ -53,7 +53,7 @@ public class ServerThread extends Thread {
     }
 
     private void parseAndExecuteCommand(String inputLine) {
-        String[] inputArray = inputLine.split(";");
+        String[] inputArray = inputLine.split(Character.toString((char)255));
         try {
             String command = inputArray[0];
             if (UPDATE_COMMAND.equals(command)) {
