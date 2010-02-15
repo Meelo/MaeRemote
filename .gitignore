@@ -1,0 +1,5 @@
+*.o
+\#*
+*.swp
+*.class
+moc_*.cpp
