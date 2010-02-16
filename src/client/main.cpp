@@ -21,13 +21,13 @@ class SensorData
     QString line;
     QFile file;
 
-    qint16 dx;
-    qint16 dy;
-    qint16 dz;
+    qint64 dx;
+    qint64 dy;
+    qint64 dz;
 
-    qint16 x;
-    qint16 y;
-    qint16 z;
+    qint64 x;
+    qint64 y;
+    qint64 z;
 
 public:
     SensorData(const QString& filename) : file(filename), 
@@ -46,29 +46,17 @@ public:
         return true;
     }
 
-    qint16 getDx() { return dx; }
-    qint16 getDy() { return dy; }
-    qint16 getDz() { return dz; }
+    qint64 getDx() { return x; }
+    qint64 getDy() { return y; }
+    qint64 getDz() { return z; }
 
     void processLine() 
     {
-        qint16 prevX = x;
-        qint16 prevY = y;
-        qint16 prevZ = z;
-
         // x y z
         // could be: 1234 -12 -987
-        x = line.section(' ', 0, 0).toShort();
-        y = line.section(' ', 1, 1).toShort();
-        z = line.section(' ', 2, 2).toShort();
-
-        dx = (x > prevX) ? x - prevX : prevX - x;
-        dy = (y > prevY) ? y - prevY : prevY - y;
-        dz = (z > prevZ) ? z - prevZ : prevZ - z;
-
-        dx = ( (dx - NOISE) > 0) ? dx / 10 : 0;
-        dy = ( (dy - NOISE) > 0) ? dy / 10 : 0;
-        dz = ( (dz - NOISE) > 0) ? dz / 10 : 0;
+        x += line.section(' ', 0, 0).toLong();
+        y += line.section(' ', 1, 1).toLong();
+        z = line.section(' ', 2, 2).toLong();
     }
 };
 
@@ -78,25 +66,35 @@ int main(int argc, char *argv[])
 
     Client client;
     std::cout << "Connecting" << std::endl;
-    if (client.connectTo("localhost", 6668)) {
+    if (client.connectTo("koti.meelo.org", 6668)) {
         std::cout << "Connected!" << std::endl;
 
-        client.sendMessage("Hello World");
-        std::cout << "Text sent!" << std::endl;
-        SensorData sensor("in.txt");
+        //client.sendMessage("Hello World");
+        //std::cout << "Text sent!" << std::endl;
+        //SensorData sensor("in.txt");
+        SensorData sensor("/sys/class/i2c-adapter/i2c-3/3-001d/coord");
         for (int i = 0; i < 2000; ++i) {
             sensor.update();
             sensor.processLine();
-            MyThread::msleep(100);
-            client.sendMouseMovement(sensor.getDy(), sensor.getDz());
-            std::cout << "Mouse movement sent!" << std::endl;
+            MyThread::msleep(25);
+            qint64 x = sensor.getDx() / 1000;
+            qint64 y = sensor.getDy() / 1000;
+            // z is roughly -1000 when it's laying on your hand, screen up.
+            qint64 z = sensor.getDz() + 1000;
+
+          //  if (x != 0 || z != 0) {
+                qint16 dz = z > 0 ? 5 : -5;
+                client.sendMouseMovement(0, dz );
+                std::cout << x << ", " << y << ", " << z << std::endl;
+            //}
+            //std::cout << "Mouse movement sent!" << std::endl;
         }
 
-        client.sendClick(3);
-        std::cout << "Right mouse click sent!" << std::endl;
+        //client.sendClick(3);
+        //std::cout << "Right mouse click sent!" << std::endl;
 
-        client.sendScroll(5);
-        std::cout << "Mouse wheel scroll sent!" << std::endl;
+        //client.sendScroll(5);
+        //std::cout << "Mouse wheel scroll sent!" << std::endl;
     }
     else {
         std::cout << "Connection failed :(" << std::endl;
