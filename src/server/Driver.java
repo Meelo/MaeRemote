@@ -1,6 +1,8 @@
 package server;
 
 import java.awt.AWTException;
+import java.awt.DisplayMode;
+import java.awt.GraphicsEnvironment;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.Robot;
@@ -13,15 +15,21 @@ public class Driver {
             InputEvent.BUTTON2_MASK, InputEvent.BUTTON3_MASK };
     private Point lastLocation;
     private Robot robot;
+    private DisplayMode displayMode;
 
     public Driver() throws AWTException {
         robot = new Robot();
         lastLocation = MouseInfo.getPointerInfo().getLocation();
+        displayMode = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode();
     }
     
     public void updatePosition(int dx, int dy) {
         lastLocation.x += dx;
         lastLocation.y += dy;
+        if (lastLocation.x < 0) lastLocation.x = 0;
+        if (lastLocation.y < 0) lastLocation.y = 0;
+        if (lastLocation.x > displayMode.getWidth()) lastLocation.x = displayMode.getWidth();
+        if (lastLocation.y > displayMode.getHeight()) lastLocation.y = displayMode.getHeight();
         robot.mouseMove(lastLocation.x, lastLocation.y);
     }
 
