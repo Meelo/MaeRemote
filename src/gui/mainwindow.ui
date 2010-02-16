@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="rightMouseButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>341</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="leftMouseButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>290</y>
+      <width>341</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lockButton">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>340</y>
+      <width>141</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="toggleButton">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>10</y>
+      <width>141</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QFrame" name="scrollFrame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>180</y>
+      <width>781</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>rightMouseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>rightMouseButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>294</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>430</x>
+     <y>77</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>leftMouseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>leftMouseButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>430</x>
+     <y>369</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toggleButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>toggleButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>695</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>534</x>
+     <y>117</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lockButton</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>lockButtonPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>682</x>
+     <y>370</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lockButton</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>lockButtonReleased()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>684</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>540</x>
+     <y>413</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>rightMouseButtonClicked()</slot>
+  <slot>leftMouseButtonClicked()</slot>
+  <slot>toggleButtonClicked()</slot>
+  <slot>lockButtonPressed()</slot>
+  <slot>lockButtonReleased()</slot>
+ </slots>
+</ui>
