@@ -18,16 +18,19 @@ void Engine::run()
             sensor.update();
             sensor.processLine();
             Engine::msleep(25);
-            qint64 x = sensor.getDx() / 1000;
-            qint64 y = sensor.getDy() / 1000;
+            qint16 x = sensor.getDx();
+            qint16 y = sensor.getDy();
             // z is roughly -1000 when it's laying on your hand, screen up.
-            qint64 z = sensor.getDz() + 1000;
-
-            //  if (x != 0 || z != 0) {
-            qint16 dz = z > 0 ? 5 : -5;
-            client->sendMouseMovement(0, dz );
+            qint16 z = sensor.getDz();
+            
+            qint16 dy = y;// != 0 ? (y > 0 ? 5 : -5) : 0;
+            qint16 dz = z;// != 0 ? (z > 0 ? 5 : -5) : 0;
+            dz /= 100;
+            dy /= 100;
+            if (dy + dz != 0) {
+                client->sendMouseMovement(dy*2, dz*2);
+            }
             std::cout << x << ", " << y << ", " << z << std::endl;
-            //}
             //std::cout << "Mouse movement sent!" << std::endl;
         }
 

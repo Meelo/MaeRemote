@@ -10,15 +10,15 @@ class SensorData
     QString line;
     QFile file;
 
-    qint64 dx;
-    qint64 dy;
-    qint64 dz;
+    qint16 dx;
+    qint16 dy;
+    qint16 dz;
 
-    qint64 x;
-    qint64 y;
-    qint64 z;
+    qint16 x;
+    qint16 y;
+    qint16 z;
 
-public:
+    public:
     SensorData(const QString& filename) : file(filename),
     dx(0), dy(0), dz(0), x(0), y(0), z(0) {}
 
@@ -35,16 +35,16 @@ public:
         return true;
     }
 
-    qint64 getDx() { return x; }
-    qint64 getDy() { return y; }
-    qint64 getDz() { return z; }
+    qint16 getDx() { return x; }
+    qint16 getDy() { return y; }
+    qint16 getDz() { return z; }
 
     void processLine()
     {
         // x y z
         // could be: 1234 -12 -987
-        x += line.section(' ', 0, 0).toLong();
-        y += line.section(' ', 1, 1).toLong();
+        x = line.section(' ', 0, 0).toLong();
+        y = line.section(' ', 1, 1).toLong();
         z = line.section(' ', 2, 2).toLong();
     }
 };
