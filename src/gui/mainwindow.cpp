@@ -12,37 +12,37 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::processScrollBarActivity(int delta)
 {
-	if (!locked && !tempLocked) {
-		qDebug() << delta;
-	}
+    if (!locked && !tempLocked) {
+        qDebug() << delta;
+    }
 }
 
 void MainWindow::leftMouseButtonClicked()
 {
-	qDebug() << "Left button clicked";
+    qDebug() << "Left button clicked";
 }
 
 void MainWindow::rightMouseButtonClicked()
 {
-	qDebug() << "Right button clicked";
+    qDebug() << "Right button clicked";
 }
 
 void MainWindow::toggleButtonClicked()
 {
-	locked = !locked;
-	qDebug() << locked;
+    locked = !locked;
+    qDebug() << locked;
 }
 
 void MainWindow::lockButtonPressed()
 {
-	tempLocked = true;
-	qDebug() << tempLocked;
+    tempLocked = true;
+    qDebug() << tempLocked;
 }
 
 void MainWindow::lockButtonReleased()
 {
-	tempLocked =false;
-	qDebug() << tempLocked;
+    tempLocked =false;
+    qDebug() << tempLocked;
 }
 
 MainWindow::~MainWindow()
