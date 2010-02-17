@@ -3,13 +3,11 @@
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow)
+    : QMainWindow(parent), ui(new Ui::MainWindow), locked(false), tempLocked(false)
 {
     ui->setupUi(this);
-	Scroll *scroll = new Scroll(ui->scrollFrame);
-	scroll->setMainWindow(this);
-	locked = false;
-	tempLocked = false;
+    Scroll *scroll = new Scroll(ui->scrollFrame);
+    scroll->setMainWindow(this);
 }
 
 void MainWindow::processScrollBarActivity(int delta)

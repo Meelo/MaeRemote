@@ -1,5 +1,5 @@
-#include "scroll.h"
 #include <QDebug>
+#include "scroll.h"
 #include "mainwindow.h"
 
 Scroll::Scroll(QWidget *parent) : QWidget(parent)
@@ -9,16 +9,16 @@ Scroll::Scroll(QWidget *parent) : QWidget(parent)
 	this->setStyleSheet("background-color: grey;");
 }
 
-void Scroll::setMainWindow(QMainWindow *main)
+void Scroll::setMainWindow(MainWindow *main)
 {
 	mainWindow = main;
 }
 
 void Scroll::mouseMoveEvent(QMouseEvent *event)
 {
-	((MainWindow)mainWindow).processScrollBarActivity(event->x()-previous);
+        mainWindow->processScrollBarActivity(event->x()-previous);
 	previous = event->x();
-	qDebug() << event->x();
+        //qDebug() << event->x();
 }
 
 void Scroll::mousePressEvent(QMouseEvent *event)

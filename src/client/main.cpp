@@ -30,7 +30,7 @@ class SensorData
     qint64 z;
 
 public:
-    SensorData(const QString& filename) : file(filename), 
+    SensorData(const QString& filename) : file(filename),
     dx(0), dy(0), dz(0), x(0), y(0), z(0) {}
 
     bool update()
@@ -38,10 +38,10 @@ public:
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
             return false;
         }
-        
+
         QTextStream in(&file);
         line = in.readLine();
-        
+
         file.close();
         return true;
     }
@@ -50,7 +50,7 @@ public:
     qint64 getDy() { return y; }
     qint64 getDz() { return z; }
 
-    void processLine() 
+    void processLine()
     {
         // x y z
         // could be: 1234 -12 -987
