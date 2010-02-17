@@ -33,7 +33,7 @@ public class Driver {
             if (lastLocation.y > displayMode.getHeight()) lastLocation.y = displayMode.getHeight();
             robot.mouseMove(lastLocation.x, lastLocation.y);
             try {
-                Thread.sleep(4);
+                Thread.sleep(2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
