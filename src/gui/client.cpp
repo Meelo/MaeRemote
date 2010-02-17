@@ -10,11 +10,8 @@ Client::Client()
 
 bool Client::connectTo(const QString& hostName, quint16 port)
 {
-    std::cout << "test0" << std::endl;
     tcpSocket->abort();
-    std::cout << "test" << std::endl;
     tcpSocket->connectToHost(hostName, port);
-    std::cout << "test2" << std::endl;
     return tcpSocket->waitForConnected(5000);
 }
 
