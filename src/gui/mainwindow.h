@@ -3,13 +3,13 @@
 
 #include <QtGui/QMainWindow>
 #include "scroll.h"
-#include "engine.h"
 
 namespace Ui
 {
     class MainWindow;
 }
 
+class Engine;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -17,7 +17,7 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void processScrollBarActivity(int delta);
-    //void startEngine() { engine.start(); }
+    void setEngine(Engine* engine) { this->engine = engine; }
 
 public slots:
     void leftMouseButtonClicked();
@@ -30,6 +30,7 @@ private:
     Ui::MainWindow *ui;
     bool locked;
     bool tempLocked;
+    Engine* engine;
 };
 
 #endif // MAINWINDOW_H

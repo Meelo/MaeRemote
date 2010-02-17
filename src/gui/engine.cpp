@@ -5,9 +5,9 @@
 
 void Engine::run()
 {
-    Client client;
+    client = new Client();
     std::cout << "Connecting" << std::endl;
-    if (client.connectTo(host, 6668)) {
+    if (client->connectTo(host, 6668)) {
         std::cout << "Connected!" << std::endl;
 
         //client.sendMessage("Hello World");
@@ -25,7 +25,7 @@ void Engine::run()
 
             //  if (x != 0 || z != 0) {
             qint16 dz = z > 0 ? 5 : -5;
-            client.sendMouseMovement(0, dz );
+            client->sendMouseMovement(0, dz );
             std::cout << x << ", " << y << ", " << z << std::endl;
             //}
             //std::cout << "Mouse movement sent!" << std::endl;

@@ -6,11 +6,11 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.showFullScreen();
-    //w.startEngine();
     Engine* engine = new Engine();
     engine->setHost("10.90.224.238");
+    MainWindow w;
+    w.setEngine(engine);
+    w.showFullScreen();
     engine->start();
     return a.exec();
 }

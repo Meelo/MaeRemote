@@ -1,6 +1,7 @@
+#include <QDebug>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QDebug>
+#include "engine.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), locked(false), tempLocked(false)
@@ -20,11 +21,13 @@ void MainWindow::processScrollBarActivity(int delta)
 void MainWindow::leftMouseButtonClicked()
 {
     qDebug() << "Left button clicked";
+    engine->sendClick(1);
 }
 
 void MainWindow::rightMouseButtonClicked()
 {
     qDebug() << "Right button clicked";
+    engine->sendClick(3);
 }
 
 void MainWindow::toggleButtonClicked()
