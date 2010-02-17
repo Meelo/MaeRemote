@@ -24,13 +24,20 @@ public class Driver {
     }
     
     public void updatePosition(int dx, int dy) {
-        lastLocation.x += dx;
-        lastLocation.y += dy;
-        if (lastLocation.x < 0) lastLocation.x = 0;
-        if (lastLocation.y < 0) lastLocation.y = 0;
-        if (lastLocation.x > displayMode.getWidth()) lastLocation.x = displayMode.getWidth();
-        if (lastLocation.y > displayMode.getHeight()) lastLocation.y = displayMode.getHeight();
-        robot.mouseMove(lastLocation.x, lastLocation.y);
+        for (int i = 0; i < 5; i++) {
+            lastLocation.x += dx / 5;
+            lastLocation.y += dy / 5;
+            if (lastLocation.x < 0) lastLocation.x = 0;
+            if (lastLocation.y < 0) lastLocation.y = 0;
+            if (lastLocation.x > displayMode.getWidth()) lastLocation.x = displayMode.getWidth();
+            if (lastLocation.y > displayMode.getHeight()) lastLocation.y = displayMode.getHeight();
+            robot.mouseMove(lastLocation.x, lastLocation.y);
+            try {
+                Thread.sleep(4);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void click(int button) {
