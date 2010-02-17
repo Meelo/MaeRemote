@@ -89,7 +89,6 @@
     <value type="QString">KDE_SESSION_UID=</value>
     <value type="QString">KDE_SESSION_VERSION=4</value>
     <value type="QString">LANG=en_US.UTF-8</value>
-    <value type="QString">LANGUAGE=</value>
     <value type="QString">LD_LIBRARY_PATH=/home/dzarg/qtcreator-1.3.1/lib/qtcreator:</value>
     <value type="QString">LOGNAME=dzarg</value>
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
@@ -139,7 +138,6 @@
     <value type="QString">KDE_SESSION_UID=</value>
     <value type="QString">KDE_SESSION_VERSION=4</value>
     <value type="QString">LANG=en_US.UTF-8</value>
-    <value type="QString">LANGUAGE=</value>
     <value type="QString">LD_LIBRARY_PATH=/home/dzarg/qtcreator-1.3.1/lib/qtcreator:</value>
     <value type="QString">LOGNAME=dzarg</value>
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
@@ -185,7 +183,6 @@
     <value type="QString">KDE_SESSION_UID=</value>
     <value type="QString">KDE_SESSION_VERSION=4</value>
     <value type="QString">LANG=en_US.UTF-8</value>
-    <value type="QString">LANGUAGE=</value>
     <value type="QString">LD_LIBRARY_PATH=/home/dzarg/qtcreator-1.3.1/lib/qtcreator:</value>
     <value type="QString">LOGNAME=dzarg</value>
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
