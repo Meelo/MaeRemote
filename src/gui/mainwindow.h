@@ -29,7 +29,6 @@ public slots:
 private:
     Ui::MainWindow *ui;
     bool locked;
-    bool tempLocked;
     Engine* engine;
 };
 

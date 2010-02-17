@@ -14,6 +14,7 @@ public:
     void setHost(const QString& newHost) { host = newHost; }
     void run();
     void sendClick(qint16 button) { client->sendClick(button); }
+    void sendScroll(qint16 delta) { client->sendScroll(delta); }
 
     static void msleep(unsigned long msecs) { QThread::msleep(msecs); }
 };

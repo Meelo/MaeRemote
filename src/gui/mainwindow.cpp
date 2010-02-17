@@ -4,7 +4,7 @@
 #include "engine.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), locked(false), tempLocked(false)
+    : QMainWindow(parent), ui(new Ui::MainWindow), locked(false)
 {
     ui->setupUi(this);
     Scroll *scroll = new Scroll(ui->scrollFrame);
@@ -13,21 +13,26 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::processScrollBarActivity(int delta)
 {
-    if (!locked && !tempLocked) {
+    if (!locked) {
         qDebug() << delta;
+        engine->sendScroll(delta);
     }
 }
 
 void MainWindow::leftMouseButtonClicked()
 {
-    qDebug() << "Left button clicked";
-    engine->sendClick(1);
+    if (!locked) {
+        qDebug() << "Left button clicked";
+        engine->sendClick(1);
+    }
 }
 
 void MainWindow::rightMouseButtonClicked()
 {
-    qDebug() << "Right button clicked";
-    engine->sendClick(3);
+    if (!locked) {
+        qDebug() << "Right button clicked";
+        engine->sendClick(3);
+    }
 }
 
 void MainWindow::toggleButtonClicked()
@@ -38,14 +43,14 @@ void MainWindow::toggleButtonClicked()
 
 void MainWindow::lockButtonPressed()
 {
-    tempLocked = true;
-    qDebug() << tempLocked;
+    locked = !locked;
+    qDebug() << locked;
 }
 
 void MainWindow::lockButtonReleased()
 {
-    tempLocked =false;
-    qDebug() << tempLocked;
+    locked = !locked;
+    qDebug() << locked;
 }
 
 MainWindow::~MainWindow()
