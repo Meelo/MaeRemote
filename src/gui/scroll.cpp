@@ -4,7 +4,6 @@
 
 Scroll::Scroll(QWidget *parent) : QWidget(parent)
 {
-    //this->setMouseTracking(true);
     this->setFixedSize(790,100);
     this->setStyleSheet("background-color: grey;");
 }
@@ -18,7 +17,6 @@ void Scroll::mouseMoveEvent(QMouseEvent *event)
 {
     mainWindow->processScrollBarActivity(event->x()-previous);
     previous = event->x();
-    //qDebug() << event->x();
 }
 
 void Scroll::mousePressEvent(QMouseEvent *event)

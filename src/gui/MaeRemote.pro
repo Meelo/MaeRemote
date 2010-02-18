@@ -8,10 +8,15 @@ SOURCES += main.cpp \
     mainwindow.cpp \
     scroll.cpp \
     client.cpp \
-    engine.cpp
+    engine.cpp \
+    startupwindow.cpp \
+    serverdata.cpp
 HEADERS += mainwindow.h \
     scroll.h \
     client.h \
     engine.h \
-    sensordata.h
-FORMS += mainwindow.ui
+    sensordata.h \
+    startupwindow.h \
+    serverdata.h
+FORMS += mainwindow.ui \
+    startupwindow.ui
