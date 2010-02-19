@@ -22,7 +22,7 @@ void Engine::run()
             qint16 y = sensor.getDy();
             // z is roughly -1000 when it's laying on your hand, screen up.
             qint16 z = sensor.getDz();
-            
+
             qint16 dy = y;// != 0 ? (y > 0 ? 5 : -5) : 0;
             qint16 dz = z;// != 0 ? (z > 0 ? 5 : -5) : 0;
             dz /= 100;

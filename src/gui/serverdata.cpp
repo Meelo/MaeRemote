@@ -5,22 +5,22 @@ ServerData::ServerData(QListWidget *parent, int type) : QListWidgetItem(parent,t
 
 QString ServerData::getName()
 {
-	return name;
+    return name;
 }
 
 int ServerData::getPort()
 {
-	return port;
+    return port;
 }
 
 void ServerData::setName(QString name)
 {
-	this->name = name;
-	this->setText(name + " : " + QString::number(port,10));
+    this->name = name;
+    this->setText(name + " : " + QString::number(port,10));
 }
 
 void ServerData::setPort(int port)
 {
-	this->port = port;
-	this->setText(name + " : " + QString::number(port,10));
+    this->port = port;
+    this->setText(name + " : " + QString::number(port,10));
 }

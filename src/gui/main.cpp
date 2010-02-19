@@ -6,14 +6,8 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-	/*Engine* engine = new Engine();
-    engine->setHost("10.90.224.238");
-    MainWindow w;
-    w.setEngine(engine);
-    w.showFullScreen();
-	engine->start();*/
+	QApplication a(argc, argv);
 	StartupWindow sw;
 	sw.show();
-    return a.exec();
+	return a.exec();
 }
