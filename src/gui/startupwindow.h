@@ -5,12 +5,15 @@
 #include <QLineEdit>
 #include <QString>
 #include <QStringList>
+#include <QAbstractItemView>
 
 #include <fstream>
 #include <string>
 #include <vector>
 
 #include "serverdata.h"
+#include "engine.h"
+#include "mainwindow.h"
 
 namespace Ui {
 	class StartupWindow;
@@ -24,16 +27,17 @@ public:
 
 public slots:
 	void addServerToList();
-	void deleteServerFromList(int position);
+	void deleteServerFromList();
 
 protected:
 	void changeEvent(QEvent *e);
 
 private:
 	Ui::StartupWindow *m_ui;
+	bool listChanged;
 	std::vector<ServerData*> data;
 	void readList();
-	void renderList();
+	void connectToServer();
 };
 
 #endif // STARTUPWINDOW_H

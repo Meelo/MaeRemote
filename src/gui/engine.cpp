@@ -7,7 +7,7 @@ void Engine::run()
 {
     client = new Client();
     std::cout << "Connecting" << std::endl;
-    if (client->connectTo(host, 6668)) {
+	if (client->connectTo(host, port)) {
         std::cout << "Connected!" << std::endl;
 
         //client.sendMessage("Hello World");

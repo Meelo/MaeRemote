@@ -1,12 +1,13 @@
 #include "startupwindow.h"
 #include "ui_startupwindow.h"
+#include <QDebug>
 
-StartupWindow::StartupWindow(QWidget *parent) : QDockWidget(parent), m_ui(new Ui::StartupWindow)
+StartupWindow::StartupWindow(QWidget *parent) : QDockWidget(parent), m_ui(new Ui::StartupWindow), listChanged(false)
 {
 	m_ui->setupUi(this);
 	m_ui->portEdit->setText("6668");
+	m_ui->serverList->setSelectionMode(QAbstractItemView::MultiSelection);
 	readList();
-	renderList();
 }
 
 void StartupWindow::changeEvent(QEvent *e)
@@ -45,16 +46,9 @@ void StartupWindow::readList()
 	}
 }
 
-void StartupWindow::renderList()
-{
-	m_ui->serverList->clear();
-	for (int i = 0; i < data.size(); ++i) {
-		m_ui->serverList->addItem(data.at(i));
-	}
-}
-
 void StartupWindow::addServerToList()
 {
+	listChanged = true;
 	bool ok;
 	int port = m_ui->portEdit->text().toInt(&ok, 10);
 	if (ok && m_ui->addressEdit->text().length() > 0) {
@@ -63,13 +57,44 @@ void StartupWindow::addServerToList()
 		sd->setPort(port);
 		data.push_back(sd);
 		m_ui->addressEdit->setText("");
-		renderList();
 	}
 }
 
-void StartupWindow::deleteServerFromList(int position)
+void StartupWindow::deleteServerFromList()
 {
+	listChanged = true;
+	for (int i = 0; i < data.size(); ++i) {
+		if (data.at(i)->isSelected()) {
+			delete data.at(i);
+			data.erase(data.begin() +i );
+		}
+	}
+}
 
+void StartupWindow::connectToServer()
+{
+	bool ok;
+	QString host = m_ui->addressEdit->text();
+	int port = m_ui->portEdit->text().toInt(&ok, 10);
+	if (!ok || m_ui->addressEdit->text().length() < 1) {
+		for (int i = 0; i < data.size(); ++i) {
+			if (data.at(i)->isSelected()) {
+				host = data.at(i)->getName();
+				port = data.at(i)->getPort();
+				break;
+			}
+		}
+	}
+	Engine *engine = new Engine();
+	engine->setHost(host);
+	engine->setPort(port);
+	MainWindow w;
+	w.setEngine(engine);
+	w.showFullScreen();
+	engine->start();
+	if (listChanged) {
+		// TODO: Save list to file.
+	}
 }
 
 StartupWindow::~StartupWindow()

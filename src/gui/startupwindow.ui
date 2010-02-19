@@ -130,22 +130,6 @@
  <resources/>
  <connections>
   <connection>
-   <sender>deleteButton</sender>
-   <signal>clicked()</signal>
-   <receiver>serverList</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>733</x>
-     <y>195</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>636</x>
-     <y>195</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>addButton</sender>
    <signal>clicked()</signal>
    <receiver>StartupWindow</receiver>
@@ -161,8 +145,41 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>deleteButton</sender>
+   <signal>clicked()</signal>
+   <receiver>StartupWindow</receiver>
+   <slot>deleteServerFromList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>712</x>
+     <y>186</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>713</x>
+     <y>257</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>exitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>StartupWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>253</x>
+     <y>355</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>120</x>
+     <y>354</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>addServerToList()</slot>
+  <slot>deleteServerFromList()</slot>
  </slots>
 </ui>
