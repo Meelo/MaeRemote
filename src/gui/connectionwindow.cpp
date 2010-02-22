@@ -3,7 +3,7 @@
 
 ConnectionWindow::ConnectionWindow(QWidget *parent) :
     QMainWindow(parent), m_ui(new Ui::ConnectionWindow),
-    listChanged(false)
+    listChanged(false), mainWindow(NULL)
 {
     m_ui->setupUi(this);
     m_ui->portEdit->setText("6668");
@@ -17,6 +17,9 @@ ConnectionWindow::~ConnectionWindow()
     while (!data.empty()) {
         delete data.back();
         data.pop_back();
+    }
+    if (mainWindow != NULL) {
+        delete mainWindow;
     }
 }
 
@@ -100,9 +103,14 @@ void ConnectionWindow::connectToServer()
     Engine *engine = new Engine();
     engine->setHost(host);
     engine->setPort(port);
-    MainWindow *w = new MainWindow();
-    w->setEngine(engine);
-    w->showFullScreen();
+
+    if (mainWindow != NULL) {
+        delete mainWindow;
+    }
+    mainWindow = new MainWindow();
+    mainWindow->setEngine(engine);
+    mainWindow->showFullScreen();
+
     engine->start();
     if (listChanged) {
         std::ofstream listFile;
