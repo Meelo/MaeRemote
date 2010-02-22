@@ -37,6 +37,7 @@ private:
     Ui::ConnectionWindow *m_ui;
     bool listChanged;
     std::vector<ServerData*> data;
+    MainWindow *mainWindow;
     void readList();
 
 private slots:
