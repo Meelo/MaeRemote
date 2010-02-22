@@ -34,6 +34,9 @@ void Engine::run()
                 std::cout << x << ", " << y << ", " << z << std::endl;
                 //std::cout << "Mouse movement sent!" << std::endl;
             }
+            else {
+                sensor.reInitializeValues();
+            }
         }
 
         //client.sendClick(3);
