@@ -126,5 +126,6 @@ void ConnectionWindow::connectToServer()
 
 void ConnectionWindow::seppuku()
 {
+    this->~ConnectionWindow();
     exit(0);
 }
