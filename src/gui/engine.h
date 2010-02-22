@@ -8,16 +8,18 @@ class Engine : public QThread
 {
     QString host;
     Client* client;
-	int port;
+    int port;
+    bool connectionTerminated;
 
 public:
-	Engine() : host("localhost"), client(0), port(6668) { }
+    Engine() : host("localhost"), client(0), port(6668), connectionTerminated(false) { }
     ~Engine() { delete client; }
     void setHost(const QString& newHost) { host = newHost; }
-	void setPort(int port) { this->port = port; }
+    void setPort(int port) { this->port = port; }
     void run();
     void sendClick(qint16 button) { client->sendClick(button); }
     void sendScroll(qint16 delta) { client->sendScroll(delta); }
+    void terminateConnection() { connectionTerminated = true; }
 
     static void msleep(unsigned long msecs) { QThread::msleep(msecs); }
 };

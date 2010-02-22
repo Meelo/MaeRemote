@@ -2,9 +2,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "engine.h"
+#include "connectionwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-        : QMainWindow(parent), ui(new Ui::MainWindow), locked(false)
+MainWindow::MainWindow(ConnectionWindow* connectionWindow, QWidget *parent)
+        : QMainWindow(parent), ui(new Ui::MainWindow), connectionWindow(connectionWindow), locked(false)
 {
     ui->setupUi(this);
     Scroll *scroll = new Scroll(ui->scrollFrame);
@@ -65,7 +66,15 @@ void MainWindow::lockButtonReleased()
     qDebug() << locked;
 }
 
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    connectionWindow->terminateConnection();
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;
+    engine->terminateConnection();
+    engine->wait();
+    delete engine;
 }

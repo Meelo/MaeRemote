@@ -89,7 +89,7 @@ void StartupWindow::connectToServer()
     Engine *engine = new Engine();
     engine->setHost(host);
     engine->setPort(port);
-    MainWindow *w = new MainWindow();
+    MainWindow *w = new MainWindow(0);
     w->setEngine(engine);
     w->showFullScreen();
     engine->start();

@@ -30,6 +30,7 @@ public slots:
     void deleteServerFromList();
     void connectToServer();
     void seppuku();
+    void terminateConnection() { delete mainWindow; mainWindow = 0; }
 
 protected:
     void changeEvent(QEvent *e);

@@ -14,7 +14,7 @@ void Engine::run()
         //std::cout << "Text sent!" << std::endl;
         //SensorData sensor("in.txt");
         SensorData sensor("/sys/class/i2c-adapter/i2c-3/3-001d/coord");
-        for (int i = 0; i < 2000; ++i) {
+        for (int i = 0; i < 2000 && !connectionTerminated; ++i) {
             sensor.update();
             sensor.processLine();
             Engine::msleep(25);

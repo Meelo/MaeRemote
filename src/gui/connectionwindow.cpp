@@ -107,7 +107,7 @@ void ConnectionWindow::connectToServer()
     if (mainWindow != NULL) {
         delete mainWindow;
     }
-    mainWindow = new MainWindow();
+    mainWindow = new MainWindow(this);
     mainWindow->setEngine(engine);
     mainWindow->showFullScreen();
 
