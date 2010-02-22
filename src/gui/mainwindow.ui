@@ -65,6 +65,17 @@
     <property name="text">
      <string/>
     </property>
+    <property name="icon">
+     <iconset>
+      <normalon>openlock_small.png</normalon>
+     </iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
    </widget>
    <widget class="QFrame" name="scrollFrame">
     <property name="geometry">

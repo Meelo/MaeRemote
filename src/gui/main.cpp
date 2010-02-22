@@ -9,5 +9,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     StartupWindow sw;
     sw.show();
+//    MainWindow mw;
+//    mw.show();
     return a.exec();
 }

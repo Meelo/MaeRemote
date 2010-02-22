@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Wed Feb 17 14:12:53 2010
-**      by: Qt User Interface Compiler version 4.5.0
+** Created: Mon Feb 22 18:48:03 2010
+**      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -51,6 +51,10 @@ public:
         toggleButton = new QPushButton(centralWidget);
         toggleButton->setObjectName(QString::fromUtf8("toggleButton"));
         toggleButton->setGeometry(QRect(640, 10, 141, 121));
+        QIcon icon;
+        icon.addPixmap(QPixmap(QString::fromUtf8("openlock_small.png")), QIcon::Normal, QIcon::On);
+        toggleButton->setIcon(icon);
+        toggleButton->setIconSize(QSize(100, 100));
         scrollFrame = new QFrame(centralWidget);
         scrollFrame->setObjectName(QString::fromUtf8("scrollFrame"));
         scrollFrame->setGeometry(QRect(10, 180, 781, 101));

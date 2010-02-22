@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QtGui/QMainWindow>
+#include <QIcon>
 #include "scroll.h"
 
 namespace Ui
@@ -30,6 +31,8 @@ private:
     Ui::MainWindow *ui;
     bool locked;
     Engine* engine;
+    QIcon open;
+    QIcon closed;
 };
 
 #endif // MAINWINDOW_H

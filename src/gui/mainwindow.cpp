@@ -9,6 +9,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     Scroll *scroll = new Scroll(ui->scrollFrame);
     scroll->setMainWindow(this);
+    ui->leftMouseButton->setStyleSheet("background-color: #dddddd;");
+    ui->rightMouseButton->setStyleSheet("background-color: #dddddd;");
+    ui->lockButton->setStyleSheet("background-color: #dddddd;");
+    ui->toggleButton->setStyleSheet("background-color: #dddddd;");
+    open.addFile("openlock_small.png");
+    closed.addFile("closedlock_small.png");
 }
 
 void MainWindow::processScrollBarActivity(int delta)
@@ -38,6 +44,12 @@ void MainWindow::rightMouseButtonClicked()
 void MainWindow::toggleButtonClicked()
 {
     locked = !locked;
+    if (locked) {
+        ui->toggleButton->setIcon(closed);
+    }
+    else {
+        ui->toggleButton->setIcon(open);
+    }
     qDebug() << locked;
 }
 
