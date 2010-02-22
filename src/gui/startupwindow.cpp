@@ -1,5 +1,6 @@
 #include "startupwindow.h"
 #include "ui_startupwindow.h"
+#include <QDebug>
 
 StartupWindow::StartupWindow(QWidget *parent) : QDockWidget(parent), m_ui(new Ui::StartupWindow), listChanged(false)
 {
@@ -88,10 +89,11 @@ void StartupWindow::connectToServer()
     Engine *engine = new Engine();
     engine->setHost(host);
     engine->setPort(port);
-    MainWindow w;
-    w.setEngine(engine);
-    w.showFullScreen();
+    MainWindow *w = new MainWindow();
+    w->setEngine(engine);
+    w->showFullScreen();
     engine->start();
+
     if (listChanged) {
         std::ofstream listFile;
         listFile.open("serverlist.txt");
@@ -102,6 +104,7 @@ void StartupWindow::connectToServer()
             listFile.close();
         }
     }
+    this->close();
 }
 
 StartupWindow::~StartupWindow()

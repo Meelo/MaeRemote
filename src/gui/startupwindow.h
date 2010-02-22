@@ -28,6 +28,7 @@ public:
 public slots:
     void addServerToList();
     void deleteServerFromList();
+    void connectToServer();
 
 protected:
     void changeEvent(QEvent *e);
@@ -37,7 +38,6 @@ private:
     bool listChanged;
     std::vector<ServerData*> data;
     void readList();
-    void connectToServer();
 };
 
 #endif // STARTUPWINDOW_H
