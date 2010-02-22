@@ -40,8 +40,6 @@ private:
     void readList();
 
 private slots:
-    void on_connectButton_clicked();
-    void on_exitButton_clicked();
 };
 
 #endif // CONNECTIONWINDOW_H
