@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'startupwindow.ui'
 **
-** Created: Mon Feb 22 20:02:23 2010
+** Created: Mon Feb 22 20:20:53 2010
 **      by: Qt User Interface Compiler version 4.5.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
