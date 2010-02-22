@@ -18,7 +18,7 @@ ConnectionWindow::~ConnectionWindow()
         delete data.back();
         data.pop_back();
     }
-    std::cerr << "purrr";
+
     while (!mouseWindows.empty()) {
         MouseWindow* window = mouseWindows.back();
         window->close();

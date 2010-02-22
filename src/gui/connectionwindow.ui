@@ -48,19 +48,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="editButton">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>200</y>
-      <width>181</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Edit</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="connectButton">
     <property name="geometry">
      <rect>
@@ -104,7 +91,7 @@
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>110</y>
+      <y>140</y>
       <width>181</width>
       <height>71</height>
      </rect>
@@ -130,7 +117,7 @@
     <property name="geometry">
      <rect>
       <x>600</x>
-      <y>290</y>
+      <y>280</y>
       <width>181</width>
       <height>71</height>
      </rect>
@@ -156,13 +143,26 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>110</y>
+      <y>130</y>
       <width>551</width>
-      <height>251</height>
+      <height>231</height>
      </rect>
     </property>
     <property name="alternatingRowColors">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>110</y>
+      <width>491</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>List of saved servers</string>
     </property>
    </widget>
   </widget>
