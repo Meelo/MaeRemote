@@ -38,26 +38,26 @@ void MouseWindow::rightMouseButtonClicked()
 
 void MouseWindow::toggleButtonClicked()
 {
-    locked = !locked;
-    if (locked) {
+    engine->toggleLocked();
+    if (engine->isLocked()) {
         ui->toggleButton->setIcon(closed);
     }
     else {
         ui->toggleButton->setIcon(open);
     }
-    qDebug() << locked;
+    qDebug() << engine->isLocked();
 }
 
 void MouseWindow::lockButtonPressed()
 {
-    locked = !locked;
-    qDebug() << locked;
+    engine->toggleLocked();
+    qDebug() << engine->isLocked();
 }
 
 void MouseWindow::lockButtonReleased()
 {
-    locked = !locked;
-    qDebug() << locked;
+    engine->toggleLocked();
+    qDebug() << engine->isLocked();
 }
 
 void MouseWindow::closeEvent(QCloseEvent *event)

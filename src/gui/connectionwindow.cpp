@@ -112,7 +112,13 @@ void ConnectionWindow::connectToServer()
     mouseWindows.push_back(mouseWindow);
     mouseWindow->setAttribute(Qt::WA_DeleteOnClose, true);
     mouseWindow->setEngine(engine);
+
+// use fullscreen on Maemo5, otherwise windowed..
+#ifdef __ARMEL__
     mouseWindow->showFullScreen();
+#else
+    mouseWindow->show();
+#endif
 
     engine->start();
     if (listChanged) {
