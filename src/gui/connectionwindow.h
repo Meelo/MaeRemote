@@ -29,7 +29,18 @@ public slots:
     void addServerToList();
     void deleteServerFromList();
     void connectToServer();
-    void terminateConnection() { delete mouseWindow; mouseWindow = 0; }
+    void terminateConnection(MouseWindow* mouseWindow)
+    {
+        for (std::size_t i = 0; i < mouseWindows.size(); ++i) {
+            if (mouseWindows.at(i) == mouseWindow) {
+                std::swap(mouseWindows.at(i), mouseWindows.back());
+                mouseWindows.pop_back();
+                mouseWindow->close();
+                delete mouseWindow;
+                break;
+            }
+        }
+    }
 
 protected:
     void changeEvent(QEvent *e);
@@ -38,10 +49,14 @@ private:
     Ui::ConnectionWindow *m_ui;
     bool listChanged;
     std::vector<ServerData*> data;
-    MouseWindow *mouseWindow;
+    std::vector<MouseWindow*> mouseWindows;
+//    MouseWindow *mouseWindow;
     void readList();
 
 private slots:
+
+private slots:
+    void on_exitButton_clicked();
 };
 
 #endif // CONNECTIONWINDOW_H

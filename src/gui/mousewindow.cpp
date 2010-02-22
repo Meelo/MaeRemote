@@ -69,7 +69,7 @@ void MouseWindow::lockButtonReleased()
 
 void MouseWindow::closeEvent(QCloseEvent *event)
 {
-    connectionWindow->terminateConnection();
+    connectionWindow->terminateConnection(this);
     QMainWindow::closeEvent(event);
 }
 
