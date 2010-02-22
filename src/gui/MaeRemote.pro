@@ -10,13 +10,16 @@ SOURCES += main.cpp \
     client.cpp \
     engine.cpp \
     startupwindow.cpp \
-    serverdata.cpp
+    serverdata.cpp \
+    connectionwindow.cpp
 HEADERS += mainwindow.h \
     scroll.h \
     client.h \
     engine.h \
     sensordata.h \
     startupwindow.h \
-    serverdata.h
+    serverdata.h \
+    connectionwindow.h
 FORMS += mainwindow.ui \
-    startupwindow.ui
+    startupwindow.ui \
+    connectionwindow.ui

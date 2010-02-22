@@ -63,7 +63,7 @@ void StartupWindow::addServerToList()
 void StartupWindow::deleteServerFromList()
 {
     listChanged = true;
-    for (int i = 0; i < data.size(); ++i) {
+    for (std::size_t i = 0; i < data.size(); ++i) {
         if (data.at(i)->isSelected()) {
             delete data.at(i);
             data.erase(data.begin() +i );
@@ -77,7 +77,7 @@ void StartupWindow::connectToServer()
     QString host = m_ui->addressEdit->text();
     int port = m_ui->portEdit->text().toInt(&ok, 10);
     if (!ok || m_ui->addressEdit->text().length() < 1) {
-        for (int i = 0; i < data.size(); ++i) {
+        for (std::size_t i = 0; i < data.size(); ++i) {
             if (data.at(i)->isSelected()) {
                 host = data.at(i)->getName();
                 port = data.at(i)->getPort();
@@ -96,7 +96,7 @@ void StartupWindow::connectToServer()
         std::ofstream listFile;
         listFile.open("serverlist.txt");
         if (listFile.is_open()) {
-            for (int i = 0; i < data.size(); ++i) {
+            for (std::size_t i = 0; i < data.size(); ++i) {
                 listFile << data.at(i)->getName().toStdString() << "," << data.at(i)->getPort() << std::endl;
             }
             listFile.close();
