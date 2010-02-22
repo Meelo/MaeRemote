@@ -4,7 +4,7 @@
 #include "engine.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), locked(false)
+        : QMainWindow(parent), ui(new Ui::MainWindow), locked(false)
 {
     ui->setupUi(this);
     Scroll *scroll = new Scroll(ui->scrollFrame);

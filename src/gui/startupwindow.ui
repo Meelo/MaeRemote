@@ -177,9 +177,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>connectButton</sender>
+   <signal>clicked()</signal>
+   <receiver>StartupWindow</receiver>
+   <slot>connectToServer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>545</x>
+     <y>359</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>690</x>
+     <y>353</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>addServerToList()</slot>
   <slot>deleteServerFromList()</slot>
+  <slot>connectToServer()</slot>
  </slots>
 </ui>

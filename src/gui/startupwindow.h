@@ -16,28 +16,28 @@
 #include "mainwindow.h"
 
 namespace Ui {
-	class StartupWindow;
+    class StartupWindow;
 }
 
 class StartupWindow : public QDockWidget {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	StartupWindow(QWidget *parent = 0);
-	~StartupWindow();
+    StartupWindow(QWidget *parent = 0);
+    ~StartupWindow();
 
 public slots:
-	void addServerToList();
-	void deleteServerFromList();
+    void addServerToList();
+    void deleteServerFromList();
 
 protected:
-	void changeEvent(QEvent *e);
+    void changeEvent(QEvent *e);
 
 private:
-	Ui::StartupWindow *m_ui;
-	bool listChanged;
-	std::vector<ServerData*> data;
-	void readList();
-	void connectToServer();
+    Ui::StartupWindow *m_ui;
+    bool listChanged;
+    std::vector<ServerData*> data;
+    void readList();
+    void connectToServer();
 };
 
 #endif // STARTUPWINDOW_H

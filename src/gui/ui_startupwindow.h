@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'startupwindow.ui'
 **
-** Created: Fri Feb 19 09:02:59 2010
+** Created: Mon Feb 22 17:16:49 2010
 **      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -79,6 +79,7 @@ public:
         QObject::connect(addButton, SIGNAL(clicked()), StartupWindow, SLOT(addServerToList()));
         QObject::connect(deleteButton, SIGNAL(clicked()), StartupWindow, SLOT(deleteServerFromList()));
         QObject::connect(exitButton, SIGNAL(clicked()), StartupWindow, SLOT(close()));
+        QObject::connect(connectButton, SIGNAL(clicked()), StartupWindow, SLOT(connectToServer()));
 
         QMetaObject::connectSlotsByName(StartupWindow);
     } // setupUi

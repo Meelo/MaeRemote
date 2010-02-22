@@ -3,21 +3,21 @@
 
 StartupWindow::StartupWindow(QWidget *parent) : QDockWidget(parent), m_ui(new Ui::StartupWindow), listChanged(false)
 {
-	m_ui->setupUi(this);
-	m_ui->portEdit->setText("6668");
-	m_ui->serverList->setSelectionMode(QAbstractItemView::MultiSelection);
-	readList();
+    m_ui->setupUi(this);
+    m_ui->portEdit->setText("6668");
+    m_ui->serverList->setSelectionMode(QAbstractItemView::MultiSelection);
+    readList();
 }
 
 void StartupWindow::changeEvent(QEvent *e)
 {
     QDockWidget::changeEvent(e);
     switch (e->type()) {
-        case QEvent::LanguageChange:
-            m_ui->retranslateUi(this);
-            break;
-        default:
-            break;
+    case QEvent::LanguageChange:
+        m_ui->retranslateUi(this);
+        break;
+    default:
+        break;
     }
 }
 
@@ -42,58 +42,66 @@ void StartupWindow::readList()
                 }
             }
         }
+        listFile.close();
     }
 }
 
 void StartupWindow::addServerToList()
 {
-	listChanged = true;
-	bool ok;
-	int port = m_ui->portEdit->text().toInt(&ok, 10);
-	if (ok && m_ui->addressEdit->text().length() > 0) {
-		ServerData *sd = new ServerData(m_ui->serverList);
-		sd->setName(m_ui->addressEdit->text());
-		sd->setPort(port);
-		data.push_back(sd);
-		m_ui->addressEdit->setText("");
-	}
+    listChanged = true;
+    bool ok;
+    int port = m_ui->portEdit->text().toInt(&ok, 10);
+    if (ok && m_ui->addressEdit->text().length() > 0) {
+        ServerData *sd = new ServerData(m_ui->serverList);
+        sd->setName(m_ui->addressEdit->text());
+        sd->setPort(port);
+        data.push_back(sd);
+        m_ui->addressEdit->setText("");
+    }
 }
 
 void StartupWindow::deleteServerFromList()
 {
-	listChanged = true;
-	for (int i = 0; i < data.size(); ++i) {
-		if (data.at(i)->isSelected()) {
-			delete data.at(i);
-			data.erase(data.begin() +i );
-		}
-	}
+    listChanged = true;
+    for (int i = 0; i < data.size(); ++i) {
+        if (data.at(i)->isSelected()) {
+            delete data.at(i);
+            data.erase(data.begin() +i );
+        }
+    }
 }
 
 void StartupWindow::connectToServer()
 {
-	bool ok;
-	QString host = m_ui->addressEdit->text();
-	int port = m_ui->portEdit->text().toInt(&ok, 10);
-	if (!ok || m_ui->addressEdit->text().length() < 1) {
-		for (int i = 0; i < data.size(); ++i) {
-			if (data.at(i)->isSelected()) {
-				host = data.at(i)->getName();
-				port = data.at(i)->getPort();
-				break;
-			}
-		}
-	}
-	Engine *engine = new Engine();
-	engine->setHost(host);
-	engine->setPort(port);
-	MainWindow w;
-	w.setEngine(engine);
-	w.showFullScreen();
-	engine->start();
-	if (listChanged) {
-		// TODO: Save list to file.
-	}
+    bool ok;
+    QString host = m_ui->addressEdit->text();
+    int port = m_ui->portEdit->text().toInt(&ok, 10);
+    if (!ok || m_ui->addressEdit->text().length() < 1) {
+        for (int i = 0; i < data.size(); ++i) {
+            if (data.at(i)->isSelected()) {
+                host = data.at(i)->getName();
+                port = data.at(i)->getPort();
+                break;
+            }
+        }
+    }
+    Engine *engine = new Engine();
+    engine->setHost(host);
+    engine->setPort(port);
+    MainWindow w;
+    w.setEngine(engine);
+    w.showFullScreen();
+    engine->start();
+    if (listChanged) {
+        std::ofstream listFile;
+        listFile.open("serverlist.txt");
+        if (listFile.is_open()) {
+            for (int i = 0; i < data.size(); ++i) {
+                listFile << data.at(i)->getName().toStdString() << "," << data.at(i)->getPort() << std::endl;
+            }
+            listFile.close();
+        }
+    }
 }
 
 StartupWindow::~StartupWindow()

@@ -70,7 +70,7 @@
     <value type="QString" >CONFIG_PROTECT=/usr/kde/3.5/share/config /usr/kde/3.5/env /usr/kde/3.5/shutdown /usr/share/config</value>
     <value type="QString" >CONFIG_PROTECT_MASK=/etc/sandbox.d /etc/env.d/java/ /etc/udev/rules.d /etc/fonts/fonts.conf /etc/terminfo /etc/ca-certificates.conf /etc/texmf/web2c /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/revdep-rebuild /etc/splash</value>
     <value type="QString" >CVS_RSH=ssh</value>
-    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-FyprKNgdYN,guid=db170cd3ccbd95c9206b14194b7e1fca</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-e44ffcCkZG,guid=149b9041c147351081f3245f4b82956b</value>
     <value type="QString" >DESKTOP_SESSION=default</value>
     <value type="QString" >DESKTOP_STARTUP_ID=</value>
     <value type="QString" >DISPLAY=:0.0</value>
@@ -109,7 +109,7 @@
     <value type="QString" >ROOTPATH=/usr/kde/3.5/sbin:/usr/kde/3.5/bin:/opt/blackdown-jdk-1.4.2.03/bin:/opt/blackdown-jdk-1.4.2.03/jre/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.3.4:/opt/ibm-jdk-bin-1.4.2.13/bin:/opt/ibm-jdk-bin-1.4.2.13/jre/bin:/usr/qt/3/bin:/usr/games/bin</value>
     <value type="QString" >RUBYOPT=-rauto_gem</value>
     <value type="QString" >SANE_CONFIG_DIR=/etc/sane.d</value>
-    <value type="QString" >SESSION_MANAGER=local/gentoo:@/tmp/.ICE-unix/5839,unix/gentoo:/tmp/.ICE-unix/5839</value>
+    <value type="QString" >SESSION_MANAGER=local/gentoo:@/tmp/.ICE-unix/5825,unix/gentoo:/tmp/.ICE-unix/5825</value>
     <value type="QString" >SHELL=/bin/bash</value>
     <value type="QString" >SHLVL=1</value>
     <value type="QString" >USB_DEVFS_PATH=/dev/bus/usb</value>
@@ -145,7 +145,7 @@
     <value type="QString" >CONFIG_PROTECT=/usr/kde/3.5/share/config /usr/kde/3.5/env /usr/kde/3.5/shutdown /usr/share/config</value>
     <value type="QString" >CONFIG_PROTECT_MASK=/etc/sandbox.d /etc/env.d/java/ /etc/udev/rules.d /etc/fonts/fonts.conf /etc/terminfo /etc/ca-certificates.conf /etc/texmf/web2c /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/revdep-rebuild /etc/splash</value>
     <value type="QString" >CVS_RSH=ssh</value>
-    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-FyprKNgdYN,guid=db170cd3ccbd95c9206b14194b7e1fca</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-e44ffcCkZG,guid=149b9041c147351081f3245f4b82956b</value>
     <value type="QString" >DESKTOP_SESSION=default</value>
     <value type="QString" >DESKTOP_STARTUP_ID=</value>
     <value type="QString" >DISPLAY=:0.0</value>
@@ -184,7 +184,7 @@
     <value type="QString" >ROOTPATH=/usr/kde/3.5/sbin:/usr/kde/3.5/bin:/opt/blackdown-jdk-1.4.2.03/bin:/opt/blackdown-jdk-1.4.2.03/jre/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.3.4:/opt/ibm-jdk-bin-1.4.2.13/bin:/opt/ibm-jdk-bin-1.4.2.13/jre/bin:/usr/qt/3/bin:/usr/games/bin</value>
     <value type="QString" >RUBYOPT=-rauto_gem</value>
     <value type="QString" >SANE_CONFIG_DIR=/etc/sane.d</value>
-    <value type="QString" >SESSION_MANAGER=local/gentoo:@/tmp/.ICE-unix/5839,unix/gentoo:/tmp/.ICE-unix/5839</value>
+    <value type="QString" >SESSION_MANAGER=local/gentoo:@/tmp/.ICE-unix/5825,unix/gentoo:/tmp/.ICE-unix/5825</value>
     <value type="QString" >SHELL=/bin/bash</value>
     <value type="QString" >SHLVL=1</value>
     <value type="QString" >USB_DEVFS_PATH=/dev/bus/usb</value>
