@@ -103,12 +103,14 @@ void ConnectionWindow::connectToServer()
     Engine *engine = new Engine();
     engine->setHost(host);
     engine->setPort(port);
+
     if (mainWindow != NULL) {
         delete mainWindow;
     }
     mainWindow = new MainWindow();
     mainWindow->setEngine(engine);
     mainWindow->showFullScreen();
+
     engine->start();
     if (listChanged) {
         std::ofstream listFile;
@@ -120,14 +122,4 @@ void ConnectionWindow::connectToServer()
             listFile.close();
         }
     }
-}
-
-void ConnectionWindow::on_exitButton_clicked()
-{
-    exit(0);
-}
-
-void ConnectionWindow::on_connectButton_clicked()
-{
-    connectToServer();
 }
