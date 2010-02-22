@@ -3,7 +3,7 @@
 
 ConnectionWindow::ConnectionWindow(QWidget *parent) :
     QMainWindow(parent), m_ui(new Ui::ConnectionWindow),
-    listChanged(false), mainWindow(NULL)
+    listChanged(false), mouseWindow(0)
 {
     m_ui->setupUi(this);
     m_ui->portEdit->setText("6668");
@@ -18,9 +18,7 @@ ConnectionWindow::~ConnectionWindow()
         delete data.back();
         data.pop_back();
     }
-    if (mainWindow != NULL) {
-        delete mainWindow;
-    }
+    delete mouseWindow;
 }
 
 void ConnectionWindow::changeEvent(QEvent *e)
@@ -104,12 +102,11 @@ void ConnectionWindow::connectToServer()
     engine->setHost(host);
     engine->setPort(port);
 
-    if (mainWindow != NULL) {
-        delete mainWindow;
-    }
-    mainWindow = new MainWindow();
-    mainWindow->setEngine(engine);
-    mainWindow->showFullScreen();
+    delete mouseWindow;
+
+    mouseWindow = new MouseWindow();
+    mouseWindow->setEngine(engine);
+    mouseWindow->showFullScreen();
 
     engine->start();
     if (listChanged) {
@@ -122,10 +119,4 @@ void ConnectionWindow::connectToServer()
             listFile.close();
         }
     }            
-}
-
-void ConnectionWindow::seppuku()
-{
-    this->~ConnectionWindow();
-    exit(0);
 }

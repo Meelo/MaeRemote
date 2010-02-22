@@ -13,7 +13,7 @@
 
 #include "serverdata.h"
 #include "engine.h"
-#include "mainwindow.h"
+#include "mousewindow.h"
 
 namespace Ui {
     class ConnectionWindow;
@@ -29,7 +29,6 @@ public slots:
     void addServerToList();
     void deleteServerFromList();
     void connectToServer();
-    void seppuku();
 
 protected:
     void changeEvent(QEvent *e);
@@ -38,7 +37,7 @@ private:
     Ui::ConnectionWindow *m_ui;
     bool listChanged;
     std::vector<ServerData*> data;
-    MainWindow *mainWindow;
+    MouseWindow *mouseWindow;
     void readList();
 
 private slots:

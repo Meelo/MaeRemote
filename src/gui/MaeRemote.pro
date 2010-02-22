@@ -5,21 +5,18 @@ QT += network
 TARGET = MaeRemote
 TEMPLATE = app
 SOURCES += main.cpp \
-    mainwindow.cpp \
+    mousewindow.cpp \
     scroll.cpp \
     client.cpp \
     engine.cpp \
-    startupwindow.cpp \
     serverdata.cpp \
     connectionwindow.cpp
-HEADERS += mainwindow.h \
+HEADERS += mousewindow.h \
     scroll.h \
     client.h \
     engine.h \
     sensordata.h \
-    startupwindow.h \
     serverdata.h \
     connectionwindow.h
-FORMS += mainwindow.ui \
-    startupwindow.ui \
+FORMS += mousewindow.ui \
     connectionwindow.ui

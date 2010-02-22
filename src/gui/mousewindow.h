@@ -7,16 +7,16 @@
 
 namespace Ui
 {
-    class MainWindow;
+    class MouseWindow;
 }
 
 class Engine;
-class MainWindow : public QMainWindow
+class MouseWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    MouseWindow(QWidget *parent = 0);
+    ~MouseWindow();
     void processScrollBarActivity(int delta);
     void setEngine(Engine* engine) { this->engine = engine; }
 
@@ -28,7 +28,7 @@ public slots:
     void lockButtonReleased();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MouseWindow *ui;
     bool locked;
     Engine* engine;
     QIcon open;

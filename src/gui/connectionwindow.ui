@@ -189,7 +189,6 @@
    <sender>exitButton</sender>
    <signal>clicked()</signal>
    <receiver>ConnectionWindow</receiver>
-   <slot>seppuku()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>108</x>
@@ -238,6 +237,5 @@
   <slot>connectToServer()</slot>
   <slot>addServerToList()</slot>
   <slot>deleteServerFromList()</slot>
-  <slot>seppuku()</slot>
  </slots>
 </ui>
