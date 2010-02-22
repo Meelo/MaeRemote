@@ -1,15 +1,16 @@
 #include <QDebug>
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "mousewindow.h"
+#include "ui_mousewindow.h"
 #include "engine.h"
 #include "connectionwindow.h"
 
-MainWindow::MainWindow(ConnectionWindow* connectionWindow, QWidget *parent)
-        : QMainWindow(parent), ui(new Ui::MainWindow), connectionWindow(connectionWindow), locked(false)
+MouseWindow::MouseWindow(ConnectionWindow* connectionWindow, QWidget *parent)
+        : QMainWindow(parent), ui(new Ui::MouseWindow), connectionWindow(connectionWindow),
+        locked(false), engine(0)
 {
     ui->setupUi(this);
     Scroll *scroll = new Scroll(ui->scrollFrame);
-    scroll->setMainWindow(this);
+    scroll->setMouseWindow(this);
     ui->leftMouseButton->setStyleSheet("background-color: #dddddd;");
     ui->rightMouseButton->setStyleSheet("background-color: #dddddd;");
     ui->lockButton->setStyleSheet("background-color: #dddddd;");
@@ -18,7 +19,7 @@ MainWindow::MainWindow(ConnectionWindow* connectionWindow, QWidget *parent)
     closed.addFile("closedlock_small.png");
 }
 
-void MainWindow::processScrollBarActivity(int delta)
+void MouseWindow::processScrollBarActivity(int delta)
 {
     if (!locked) {
         qDebug() << delta;
@@ -26,7 +27,7 @@ void MainWindow::processScrollBarActivity(int delta)
     }
 }
 
-void MainWindow::leftMouseButtonClicked()
+void MouseWindow::leftMouseButtonClicked()
 {
     if (!locked) {
         qDebug() << "Left button clicked";
@@ -34,7 +35,7 @@ void MainWindow::leftMouseButtonClicked()
     }
 }
 
-void MainWindow::rightMouseButtonClicked()
+void MouseWindow::rightMouseButtonClicked()
 {
     if (!locked) {
         qDebug() << "Right button clicked";
@@ -42,7 +43,7 @@ void MainWindow::rightMouseButtonClicked()
     }
 }
 
-void MainWindow::toggleButtonClicked()
+void MouseWindow::toggleButtonClicked()
 {
     locked = !locked;
     if (locked) {
@@ -54,24 +55,25 @@ void MainWindow::toggleButtonClicked()
     qDebug() << locked;
 }
 
-void MainWindow::lockButtonPressed()
+void MouseWindow::lockButtonPressed()
 {
     locked = !locked;
     qDebug() << locked;
 }
 
-void MainWindow::lockButtonReleased()
+void MouseWindow::lockButtonReleased()
 {
     locked = !locked;
     qDebug() << locked;
 }
 
-void MainWindow::closeEvent(QCloseEvent *event)
+void MouseWindow::closeEvent(QCloseEvent *event)
 {
     connectionWindow->terminateConnection();
+    QMainWindow::closeEvent(event);
 }
 
-MainWindow::~MainWindow()
+MouseWindow::~MouseWindow()
 {
     delete ui;
     engine->terminateConnection();

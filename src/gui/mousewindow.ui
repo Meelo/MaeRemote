@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>MouseWindow</class>
+ <widget class="QMainWindow" name="MouseWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>MaeRemote</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="rightMouseButton">
@@ -112,7 +112,7 @@
   <connection>
    <sender>rightMouseButton</sender>
    <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MouseWindow</receiver>
    <slot>rightMouseButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -128,7 +128,7 @@
   <connection>
    <sender>leftMouseButton</sender>
    <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MouseWindow</receiver>
    <slot>leftMouseButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -144,7 +144,7 @@
   <connection>
    <sender>toggleButton</sender>
    <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MouseWindow</receiver>
    <slot>toggleButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -160,7 +160,7 @@
   <connection>
    <sender>lockButton</sender>
    <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MouseWindow</receiver>
    <slot>lockButtonPressed()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -176,7 +176,7 @@
   <connection>
    <sender>lockButton</sender>
    <signal>released()</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>MouseWindow</receiver>
    <slot>lockButtonReleased()</slot>
    <hints>
     <hint type="sourcelabel">

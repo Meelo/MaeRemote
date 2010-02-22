@@ -8,17 +8,17 @@
 
 namespace Ui
 {
-    class MainWindow;
+    class MouseWindow;
 }
 
 class ConnectionWindow;
 class Engine;
-class MainWindow : public QMainWindow
+class MouseWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    MainWindow(ConnectionWindow* connectionWindow, QWidget *parent = 0);
-    ~MainWindow();
+    MouseWindow(ConnectionWindow* connectionWindow, QWidget *parent = 0);
+    ~MouseWindow();
     void processScrollBarActivity(int delta);
     void setEngine(Engine* engine) { this->engine = engine; }
 
@@ -33,7 +33,7 @@ protected:
     void closeEvent(QCloseEvent *event);
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MouseWindow *ui;
     ConnectionWindow *connectionWindow;
     bool locked;
     Engine* engine;

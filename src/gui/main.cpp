@@ -1,6 +1,6 @@
 #include <QtCore/QCoreApplication>
 #include <QtGui/QApplication>
-#include "mainwindow.h"
+#include "mousewindow.h"
 #include "connectionwindow.h"
 #include "engine.h"
 

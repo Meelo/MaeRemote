@@ -5,12 +5,12 @@
 #include <QMouseEvent>
 #include <QMainWindow>
 
-class MainWindow;
+class MouseWindow;
 class Scroll : public QWidget
 {
 public:
     Scroll(QWidget *parent);
-    void setMainWindow(MainWindow *main);
+    void setMouseWindow(MouseWindow *main);
 
 protected:
     void mouseMoveEvent(QMouseEvent *event);
@@ -19,7 +19,7 @@ protected:
 
 private:
     int previous;
-    MainWindow *mainWindow;
+    MouseWindow *mouseWindow;
 };
 
 #endif // SCROLL_H
