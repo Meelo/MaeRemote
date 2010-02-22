@@ -29,6 +29,7 @@ public slots:
     void addServerToList();
     void deleteServerFromList();
     void connectToServer();
+    void seppuku();
 
 protected:
     void changeEvent(QEvent *e);

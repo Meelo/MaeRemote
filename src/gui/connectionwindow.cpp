@@ -121,5 +121,10 @@ void ConnectionWindow::connectToServer()
             }
             listFile.close();
         }
-    }
+    }            
+}
+
+void ConnectionWindow::seppuku()
+{
+    exit(0);
 }
