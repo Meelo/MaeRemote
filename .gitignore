@@ -3,3 +3,4 @@
 *.swp
 *.class
 moc_*.cpp
+ui_*
