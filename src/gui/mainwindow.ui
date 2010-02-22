@@ -52,6 +52,17 @@
     <property name="text">
      <string/>
     </property>
+    <property name="icon">
+     <iconset>
+      <normalon>freeze.png</normalon>
+     </iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>110</width>
+      <height>110</height>
+     </size>
+    </property>
    </widget>
    <widget class="QPushButton" name="toggleButton">
     <property name="geometry">
