@@ -14,6 +14,11 @@ bool Client::connectTo(const QString& hostName, quint16 port)
     return tcpSocket->waitForConnected(5000);
 }
 
+void Client::disconnect()
+{
+    tcpSocket->abort();
+}
+
 void Client::send(const char* data, qint64 len)
 {
     tcpSocket->write(data, len);

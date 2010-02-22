@@ -10,6 +10,7 @@ class Client : public QObject
 public:
     Client();
     bool connectTo(const QString& hostName, quint16 port);
+    void disconnect();
     void send(const char* data, qint64 len);
     void sendMessage(const QByteArray& data);
     void sendMouseMovement(qint16 dx, qint16 dy);
