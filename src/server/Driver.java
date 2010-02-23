@@ -60,7 +60,7 @@ public class Driver {
         for (int i = 0; i < string.length(); i++) {
             char letter = string.charAt(i);
             char upperCase = Character.toUpperCase(letter);
-            boolean shift = letter == upperCase;
+            boolean shift = letter == upperCase && Character.isLetter(letter);
             if (shift) {
                 robot.keyPress(KeyEvent.VK_SHIFT);
             }
