@@ -15,23 +15,28 @@ void Engine::run()
         //SensorData sensor("in.txt");
         SensorData sensor("/sys/class/i2c-adapter/i2c-3/3-001d/coord");
         for (int i = 0; i < 2000 && !connectionTerminated; ++i) {
-            sensor.update();
-            sensor.processLine();
             Engine::msleep(25);
-            qint16 x = sensor.getDx();
-            qint16 y = sensor.getDy();
-            // z is roughly -1000 when it's laying on your hand, screen up.
-            qint16 z = sensor.getDz();
+            if (!locked) {
+                sensor.update();
+                sensor.processLine();
+                qint16 x = sensor.getX();
+                qint16 y = sensor.getY();
+                // z is roughly -1000 when it's laying on your hand, screen up.
+                qint16 z = sensor.getZ();
 
-            qint16 dy = y;// != 0 ? (y > 0 ? 5 : -5) : 0;
-            qint16 dz = z;// != 0 ? (z > 0 ? 5 : -5) : 0;
-            dz /= 100;
-            dy /= 100;
-            if (dy + dz != 0) {
-                client->sendMouseMovement(dy*2, dz*2);
+                qint16 dy = y;// != 0 ? (y > 0 ? 5 : -5) : 0;
+                qint16 dz = z;// != 0 ? (z > 0 ? 5 : -5) : 0;
+                dz /= 100;
+                dy /= 100;
+                if (dy + dz != 0) {
+                    client->sendMouseMovement(dy*2, dz*2);
+                }
+                std::cout << x << ", " << y << ", " << z << std::endl;
+                //std::cout << "Mouse movement sent!" << std::endl;
             }
-            std::cout << x << ", " << y << ", " << z << std::endl;
-            //std::cout << "Mouse movement sent!" << std::endl;
+            else {
+                sensor.reInitializeValues();
+            }
         }
 
         //client.sendClick(3);

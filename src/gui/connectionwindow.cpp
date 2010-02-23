@@ -3,7 +3,7 @@
 
 ConnectionWindow::ConnectionWindow(QWidget *parent) :
     QMainWindow(parent), m_ui(new Ui::ConnectionWindow),
-    listChanged(false), mouseWindow(0)
+    listChanged(false)
 {
     m_ui->setupUi(this);
     m_ui->portEdit->setText("6668");
@@ -18,7 +18,13 @@ ConnectionWindow::~ConnectionWindow()
         delete data.back();
         data.pop_back();
     }
-    delete mouseWindow;
+
+    while (!mouseWindows.empty()) {
+        MouseWindow* window = mouseWindows.back();
+        window->close();
+        delete window;
+        mouseWindows.pop_back();
+    }
 }
 
 void ConnectionWindow::changeEvent(QEvent *e)
@@ -102,11 +108,17 @@ void ConnectionWindow::connectToServer()
     engine->setHost(host);
     engine->setPort(port);
 
-    delete mouseWindow;
-
-    mouseWindow = new MouseWindow(this);
+    MouseWindow *mouseWindow = new MouseWindow(this);
+    mouseWindows.push_back(mouseWindow);
+    mouseWindow->setAttribute(Qt::WA_DeleteOnClose, true);
     mouseWindow->setEngine(engine);
+
+// use fullscreen on Maemo5, otherwise windowed..
+#ifdef __ARMEL__
     mouseWindow->showFullScreen();
+#else
+    mouseWindow->show();
+#endif
 
     engine->start();
     if (listChanged) {
@@ -119,4 +131,13 @@ void ConnectionWindow::connectToServer()
             listFile.close();
         }
     }            
+}
+
+void ConnectionWindow::on_exitButton_clicked()
+{
+    while (!mouseWindows.empty()) {
+        MouseWindow* window = mouseWindows.back();
+        window->close();
+    }
+    exit(0);
 }
