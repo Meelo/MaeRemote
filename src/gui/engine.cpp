@@ -28,9 +28,9 @@ void Engine::run()
                 qint16 dy = y;
                 qint16 dz = z;
 
-                dx /= 10;
-                dy /= 10;
-                dz /= 10;
+                dx /= 50;
+                dy /= 50;
+                dz /= 50;
 
                 qreal pitch = atan2(x, -y);
                 qreal roll = atan2(y, -z);
