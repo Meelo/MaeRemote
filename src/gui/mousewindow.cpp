@@ -70,7 +70,13 @@ void MouseWindow::closeEvent(QCloseEvent *event)
 void MouseWindow::keyPressEvent (QKeyEvent *event)
 {
     QMainWindow::keyPressEvent(event);
-    engine->sendText(event->text());
+    switch (event->key()) {
+    case Qt::Key_Enter:
+        engine->sendText("__RETURN__");
+        break;
+    default:
+        engine->sendText(event->text().toLatin1());
+    }
     qDebug() << "Key: " << event->key() << " as text: " << event->text();
 }
 
