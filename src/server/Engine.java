@@ -54,9 +54,14 @@ public class Engine implements Runnable {
                 boolean fastMode = !commandQueue.isEmpty();
                 updatePosition(dx, dy, fastMode);
             }
-            else if (MESSAGE_COMMAND.equals(command)) {
+            else if (MESSAGE_COMMAND.equals(command) && inputArray.length > 1) {
                 // M;character/string
-                sendCharacters(inputArray[1]);
+                if (inputArray[1].equals("__RETURN__")) {
+                    sendCharacters("\n");
+                }
+                else {
+                    sendCharacters(inputArray[1]);
+                }
             }
             else if (CLICK_COMMAND.equals(command)) {
                 // C;button
