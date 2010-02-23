@@ -16,26 +16,32 @@ public class Driver {
     private Point lastLocation;
     private Robot robot;
     private DisplayMode displayMode;
-
+    private static final int MOVE_STEPS = 5;
+    
     public Driver() throws AWTException {
         robot = new Robot();
         lastLocation = MouseInfo.getPointerInfo().getLocation();
         displayMode = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode();
     }
     
-    public void updatePosition(int dx, int dy) {
-        for (int i = 0; i < 5; i++) {
-            lastLocation.x += dx / 5;
-            lastLocation.y += dy / 5;
-            if (lastLocation.x < 0) lastLocation.x = 0;
-            if (lastLocation.y < 0) lastLocation.y = 0;
-            if (lastLocation.x > displayMode.getWidth()) lastLocation.x = displayMode.getWidth();
-            if (lastLocation.y > displayMode.getHeight()) lastLocation.y = displayMode.getHeight();
-            robot.mouseMove(lastLocation.x, lastLocation.y);
-            try {
-                Thread.sleep(2);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+    public void updatePosition(int dx, int dy, boolean fastMode) {
+        if (fastMode) {
+            movePosition(dx, dy);
+        }
+        else {
+            int targetX = validateXCoord(lastLocation.x + dx);
+            int targetY = validateYCoord(lastLocation.y + dy);
+            int stepsLeft = MOVE_STEPS;
+            while (stepsLeft > 0) {
+                int xStep = (targetX - lastLocation.x) / stepsLeft;
+                int yStep = (targetY - lastLocation.y) / stepsLeft;
+                movePosition(xStep, yStep);
+                try {
+                    Thread.sleep(5);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                stepsLeft--;
             }
         }
     }
@@ -64,5 +70,29 @@ public class Driver {
                 robot.keyRelease(KeyEvent.VK_SHIFT);
             }
         }
+    }
+
+    private void movePosition(int dx, int dy) {
+        lastLocation.x = validateXCoord(lastLocation.x + dx);
+        lastLocation.y = validateYCoord(lastLocation.y + dy);
+        robot.mouseMove(lastLocation.x, lastLocation.y);        
+    }
+    
+    private int validateXCoord(int x) {
+        return validateCoord(x, displayMode.getWidth());
+    }
+
+    private int validateYCoord(int y) {
+        return validateCoord(y, displayMode.getHeight());
+    }
+
+    private int validateCoord(int coord, int limit) {
+        if (coord > limit) {
+            coord = limit;
+        }
+        else if (coord < 0) {
+            coord = 0;
+        }
+        return coord;
     }
 }
