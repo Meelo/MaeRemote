@@ -17,6 +17,7 @@ MouseWindow::MouseWindow(ConnectionWindow* connectionWindow, QWidget *parent)
     ui->toggleButton->setStyleSheet("background-color: #dddddd;");
     open.addFile("openlock_small.png");
     closed.addFile("closedlock_small.png");
+    setFocusPolicy(Qt::StrongFocus);
 }
 
 void MouseWindow::processScrollBarActivity(int delta)
@@ -71,6 +72,12 @@ void MouseWindow::closeEvent(QCloseEvent *event)
 {
     connectionWindow->terminateConnection();
     QMainWindow::closeEvent(event);
+}
+
+void MouseWindow::keyPressEvent (QKeyEvent *event)
+{
+    QMainWindow::keyPressEvent(event);
+    engine->sendText(event->text());
 }
 
 MouseWindow::~MouseWindow()

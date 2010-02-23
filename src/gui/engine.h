@@ -19,6 +19,7 @@ public:
     void run();
     void sendClick(qint16 button) { client->sendClick(button); }
     void sendScroll(qint16 delta) { client->sendScroll(delta); }
+    void sendText(const QString& text) { client->sendMessage(text.toLatin1()); }
     void terminateConnection() { connectionTerminated = true; }
 
     static void msleep(unsigned long msecs) { QThread::msleep(msecs); }
