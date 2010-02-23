@@ -71,11 +71,11 @@ void MouseWindow::keyPressEvent (QKeyEvent *event)
 {
     QMainWindow::keyPressEvent(event);
     switch (event->key()) {
-    case Qt::Key_Return:
+    case Qt::Key_Enter:
         engine->sendText("__RETURN__");
         break;
     default:
-        engine->sendText(event->text().toAscii());
+        engine->sendText(event->text().toLatin1());
     }
     qDebug() << "Key: " << event->key() << " as text: " << event->text();
 }
