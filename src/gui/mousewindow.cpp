@@ -71,6 +71,7 @@ void MouseWindow::keyPressEvent (QKeyEvent *event)
 {
     QMainWindow::keyPressEvent(event);
     engine->sendText(event->text());
+    qDebug() << "Key: " << event->key() << " as text: " << event->text();
 }
 
 MouseWindow::~MouseWindow()
