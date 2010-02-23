@@ -18,13 +18,17 @@
     <normaloff>logo.png</normaloff>logo.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(mouseui.png);</string>
+   <string notr="true">QWidget#centralWidget {
+	background-image: url(mouseui.png);
+	background-color: transparent;
+}
+
+QFrame, QPushButton {
+	background-image: url(nopic.png);
+	background-color: transparent;
+}</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <property name="styleSheet">
-    <string notr="true">background-image: url(mouseui.png);
-background-color: transparent;</string>
-   </property>
    <widget class="QPushButton" name="rightMouseButton">
     <property name="geometry">
      <rect>
@@ -39,10 +43,6 @@ background-color: transparent;</string>
     </property>
     <property name="whatsThis">
      <string>Right click button....</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(nopic.png);
-background-color: transparent;</string>
     </property>
     <property name="text">
      <string>right button</string>
@@ -66,10 +66,6 @@ background-color: transparent;</string>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(nopic.png);
-background-color: transparent;</string>
-    </property>
     <property name="text">
      <string>left button</string>
     </property>
@@ -85,10 +81,6 @@ background-color: transparent;</string>
     </property>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(nopic.png);
-background-color: transparent;</string>
     </property>
     <property name="text">
      <string/>
@@ -117,10 +109,6 @@ background-color: transparent;</string>
     <property name="focusPolicy">
      <enum>Qt::NoFocus</enum>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(nopic.png);
-background-color: transparent;</string>
-    </property>
     <property name="text">
      <string/>
     </property>
@@ -147,10 +135,6 @@ background-color: transparent;</string>
     </property>
     <property name="whatsThis">
      <string>Scroll bar and middle click button...</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(nopic.png);
-background-color: transparent;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
