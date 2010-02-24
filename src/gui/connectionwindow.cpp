@@ -94,7 +94,7 @@ void ConnectionWindow::connectToServer()
     bool ok = false;
     QString host = m_ui->addressEdit->text();
     int port = m_ui->portEdit->text().toInt(&ok, 10);
-    if (ok && !m_ui->addressEdit->text().isEmpty()) {
+    if (!ok || m_ui->addressEdit->text().isEmpty()) {
         for (std::size_t i = 0; i < data.size(); ++i) {
             if (data.at(i)->isSelected()) {
                 host = data.at(i)->getName();
