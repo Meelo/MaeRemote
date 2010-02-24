@@ -25,7 +25,7 @@ public class Driver {
         shiftCharacters['!'] = KeyEvent.VK_1; 
         shiftCharacters['\"'] = KeyEvent.VK_2;
         shiftCharacters['#'] = KeyEvent.VK_3;
-        shiftCharacters['¤'] = KeyEvent.VK_4;
+//        shiftCharacters['¤'] = KeyEvent.VK_4;
         shiftCharacters['%'] = KeyEvent.VK_5;
         shiftCharacters['&'] = KeyEvent.VK_6;
         shiftCharacters['/'] = KeyEvent.VK_7;
@@ -40,7 +40,7 @@ public class Driver {
         shiftCharacters['*'] = KeyEvent.VK_QUOTE;
         
         altgrCharacters['@'] = KeyEvent.VK_2;
-        altgrCharacters['£'] = KeyEvent.VK_3;
+//        altgrCharacters['£'] = KeyEvent.VK_3;
         altgrCharacters['$'] = KeyEvent.VK_4;
         altgrCharacters['{'] = KeyEvent.VK_7;
         altgrCharacters['['] = KeyEvent.VK_8;
