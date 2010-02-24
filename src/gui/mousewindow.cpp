@@ -116,8 +116,6 @@ void MouseWindow::keyReleaseEvent (QKeyEvent *event)
     case Qt::Key_Down:
         engine->sendText("__RELEASE_DOWN__");
         break;
-    default:
-        engine->sendText(event->text().toAscii());
     }
     qDebug() << "Key released: " << event->key() << " as text: " << event->text();
 }
