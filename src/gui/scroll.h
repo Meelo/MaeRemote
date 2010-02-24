@@ -20,6 +20,7 @@ protected:
 private:
     int previous;
     bool moved;
+    int counter;
     MouseWindow *mouseWindow;
 };
 
