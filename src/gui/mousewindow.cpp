@@ -82,10 +82,44 @@ void MouseWindow::keyPressEvent (QKeyEvent *event)
     case Qt::Key_Enter:
         engine->sendText("__RETURN__");
         break;
+    case Qt::Key_Left:
+        engine->sendText("__HOLD_LEFT__");
+        break;
+    case Qt::Key_Up:
+        engine->sendText("__HOLD_UP__");
+        break;
+    case Qt::Key_Right:
+        engine->sendText("__HOLD_RIGHT__");
+        break;
+    case Qt::Key_Down:
+        engine->sendText("__HOLD_DOWN__");
+        break;
     default:
         engine->sendText(event->text().toAscii());
     }
-    qDebug() << "Key: " << event->key() << " as text: " << event->text();
+    qDebug() << "Key pressed: " << event->key() << " as text: " << event->text();
+}
+
+void MouseWindow::keyReleaseEvent (QKeyEvent *event)
+{
+    QMainWindow::keyReleaseEvent(event);
+    switch (event->key()) {
+    case Qt::Key_Left:
+        engine->sendText("__RELEASE_LEFT__");
+        break;
+    case Qt::Key_Up:
+        engine->sendText("__RELEASE_UP__");
+        break;
+    case Qt::Key_Right:
+        engine->sendText("__RELEASE_RIGHT__");
+        break;
+    case Qt::Key_Down:
+        engine->sendText("__RELEASE_DOWN__");
+        break;
+    default:
+        engine->sendText(event->text().toAscii());
+    }
+    qDebug() << "Key released: " << event->key() << " as text: " << event->text();
 }
 
 MouseWindow::~MouseWindow()
