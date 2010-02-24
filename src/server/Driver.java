@@ -162,4 +162,13 @@ public class Driver {
         }
         return coord;
     }
+
+    public void releaseKey(int keycode) {
+        robot.keyPress(keycode);
+    }
+
+    public void holdKey(int keycode) {
+        robot.keyRelease(keycode);
+        
+    }
 }

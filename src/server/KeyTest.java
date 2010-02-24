@@ -31,7 +31,7 @@ public class KeyTest {
         }.start();
         Thread.sleep(1000); // UGLY sleep synchronization for waiting the input dialog to open
         keyTest();
-        engine.stop();        
+        engine.stop();
     }
 }    
      
