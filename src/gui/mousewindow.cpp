@@ -11,12 +11,12 @@ MouseWindow::MouseWindow(ConnectionWindow* connectionWindow, QWidget *parent)
     ui->setupUi(this);
     Scroll *scroll = new Scroll(ui->scrollFrame);
     scroll->setMouseWindow(this);
-    ui->leftMouseButton->setStyleSheet("background-color: #dddddd;");
-    ui->rightMouseButton->setStyleSheet("background-color: #dddddd;");
-    ui->lockButton->setStyleSheet("background-color: #dddddd;");
-    ui->toggleButton->setStyleSheet("background-color: #dddddd;");
-    open.addFile("openlock_small.png");
-    closed.addFile("closedlock_small.png");
+//    ui->leftMouseButton->setStyleSheet("background-color: #dddddd;");
+//    ui->rightMouseButton->setStyleSheet("background-color: #dddddd;");
+//    ui->lockButton->setStyleSheet("background-color: #dddddd;");
+//    ui->toggleButton->setStyleSheet("background-color: #dddddd;");
+//    open.addFile("openlock_small.png");
+//    closed.addFile("closedlock_small.png");
     setFocusPolicy(Qt::StrongFocus);
 }
 
