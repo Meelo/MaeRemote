@@ -1,6 +1,9 @@
 package server;
 
 import java.awt.AWTException;
+import java.awt.event.KeyEvent;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -15,7 +18,22 @@ public class Engine implements Runnable {
     private static final String CLICK_COMMAND = "C";
     private static final String SCROLL_COMMAND = "S";
     private static final String SHUTDOWN_REQUEST = "shutdown";
+    
+    private static final String HOLD = "__HOLD_";
+    private static final String RELEASE = "__RELEASE_";
+    private static final String LEFT = "LEFT__";
+    private static final String UP = "UP__";
+    private static final String RIGHT = "RIGHT__";
+    private static final String DOWN = "DOWN__";
+    private static final Map<String, Integer> arrowMap = new HashMap<String, Integer>();
 
+    static {
+        arrowMap.put(LEFT, KeyEvent.VK_LEFT);
+        arrowMap.put(UP, KeyEvent.VK_UP);
+        arrowMap.put(RIGHT, KeyEvent.VK_RIGHT);
+        arrowMap.put(DOWN, KeyEvent.VK_DOWN);
+    }
+    
     public Engine() throws AWTException {
         this.driver = new Driver();
         this.commandQueue = new LinkedBlockingQueue<String>();
@@ -59,6 +77,12 @@ public class Engine implements Runnable {
                 if (inputArray[1].equals("__RETURN__")) {
                     sendCharacters("\n");
                 }
+                else if (inputArray[1].startsWith(HOLD)) {
+                    holdKey(inputArray[1].substring(HOLD.length()));
+                }
+                else if (inputArray[1].startsWith(RELEASE)) {
+                    releaseKey(inputArray[1].substring(RELEASE.length()));
+                }
                 else {
                     sendCharacters(inputArray[1]);
                 }
@@ -79,6 +103,14 @@ public class Engine implements Runnable {
             System.err.println("Error while parsing a command: " + commandLine);
             e.printStackTrace();
         }        
+    }
+
+    private void releaseKey(String key) {
+        driver.releaseKey(arrowMap.get(key));
+    }
+
+    private void holdKey(String key) {
+        driver.holdKey(arrowMap.get(key));
     }
 
     public void log(String string) {
