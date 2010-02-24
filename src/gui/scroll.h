@@ -21,7 +21,7 @@ private:
     int previous;
     bool moved;
     int counter;
-    static int SENSITIVITY = 50;
+    static const int SENSITIVITY = 50;
     MouseWindow *mouseWindow;
 };
 
