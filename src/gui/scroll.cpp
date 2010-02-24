@@ -16,8 +16,8 @@ void Scroll::mouseMoveEvent(QMouseEvent *event)
 {
     int delta = event->x() - previous;
     counter += delta;
-    if (abs(counter) > 75) {
-        mouseWindow->processScrollBarActivity(counter / 75);
+    if (abs(counter) > SENSITIVITY) {
+        mouseWindow->processScrollBarActivity(counter / SENSITIVITY);
         counter = 0;
         moved = true;
     }
