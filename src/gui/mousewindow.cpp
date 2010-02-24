@@ -75,7 +75,7 @@ void MouseWindow::keyPressEvent (QKeyEvent *event)
         engine->sendText("__RETURN__");
         break;
     default:
-        engine->sendText(event->text().toLatin1());
+        engine->sendText(event->text().toAscii());
     }
     qDebug() << "Key: " << event->key() << " as text: " << event->text();
 }
