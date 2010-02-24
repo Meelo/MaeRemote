@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "sensordata.h"
 #include "engine.h"
 #include "client.h"
@@ -23,15 +24,32 @@ void Engine::run()
                 qint16 y = sensor.getY();
                 // z is roughly -1000 when it's laying on your hand, screen up.
                 qint16 z = sensor.getZ();
+                qint16 dx = x;
+                qint16 dy = y;
+                qint16 dz = z;
 
-                qint16 dy = y;// != 0 ? (y > 0 ? 5 : -5) : 0;
-                qint16 dz = z;// != 0 ? (z > 0 ? 5 : -5) : 0;
-                dz /= 100;
-                dy /= 100;
-                if (dy + dz != 0) {
-                    client->sendMouseMovement(dy*2, dz*2);
+                dx /= 50;
+                dy /= 50;
+                dz /= 50;
+
+                qreal pitch = atan2(x, -y);
+                qreal roll = atan2(y, -z);
+                std::cout << pitch << ", " << roll << std::endl;
+                pitch = pitch * 180 / M_PI * -1;
+                roll = (roll * 180 / M_PI) + 90;
+                std::cout << pitch << ", " << roll << std::endl;
+
+//pos->pitch = (pitch * 180/M_PI)*-1;
+//pos->roll = (roll * 180/M_PI) + 90;
+
+//                dx = (abs(dx) < 10) ? 0 : dx;
+//                dy = (abs(dy) < 10) ? 0 : dy;
+//                dz = (abs(dz) < 10) ? 0 : dz;
+
+                if (dx + dy != 0) {
+                    client->sendMouseMovement(dy*2, -(dx*2));
                 }
-                std::cout << x << ", " << y << ", " << z << std::endl;
+//                std::cout << x << ", " << y << ", " << z << std::endl;
                 //std::cout << "Mouse movement sent!" << std::endl;
             }
             else {

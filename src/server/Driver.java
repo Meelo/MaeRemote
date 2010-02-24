@@ -12,18 +12,18 @@ import java.awt.event.KeyEvent;
 public class Driver {
 
     private static int[] buttons = { InputEvent.BUTTON1_MASK,
-            InputEvent.BUTTON2_MASK, InputEvent.BUTTON3_MASK };
+        InputEvent.BUTTON2_MASK, InputEvent.BUTTON3_MASK };
     private Point lastLocation;
     private Robot robot;
     private DisplayMode displayMode;
     private static final int MOVE_STEPS = 5;
-    
+
     public Driver() throws AWTException {
         robot = new Robot();
         lastLocation = MouseInfo.getPointerInfo().getLocation();
         displayMode = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode();
     }
-    
+
     public void updatePosition(int dx, int dy, boolean fastMode) {
         if (fastMode) {
             movePosition(dx, dy);
@@ -55,20 +55,29 @@ public class Driver {
     public void scroll(int amount) {
         robot.mouseWheel(amount);
     }
-    
+
     public void sendCharacters(String string) {
         for (int i = 0; i < string.length(); i++) {
             char letter = string.charAt(i);
-            char upperCase = Character.toUpperCase(letter);
-            boolean shift = letter == upperCase && Character.isLetter(letter);
-            if (shift) {
-                robot.keyPress(KeyEvent.VK_SHIFT);
+            switch (letter) {
+            case '!':
+                type(KeyEvent.VK_1, true);
+                break;
+            default:
+                char upperCase = Character.toUpperCase(letter);
+                boolean shift = letter == upperCase && Character.isLetter(letter);
+                type(upperCase, shift);
             }
-            robot.keyPress(upperCase);
-            robot.keyRelease(upperCase);
-            if (shift) {
-                robot.keyRelease(KeyEvent.VK_SHIFT);
-            }
+        }
+    }
+    public void type(int keyCode, boolean shift) {
+        if (shift) {
+            robot.keyPress(KeyEvent.VK_SHIFT);
+        }
+        robot.keyPress(keyCode);
+        robot.keyRelease(keyCode);
+        if (shift) {
+            robot.keyRelease(KeyEvent.VK_SHIFT);
         }
     }
 
@@ -77,7 +86,7 @@ public class Driver {
         lastLocation.y = validateYCoord(lastLocation.y + dy);
         robot.mouseMove(lastLocation.x, lastLocation.y);        
     }
-    
+
     private int validateXCoord(int x) {
         return validateCoord(x, displayMode.getWidth());
     }

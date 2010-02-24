@@ -13,41 +13,74 @@
   <property name="windowTitle">
    <string>MaeRemote</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>logo.png</normaloff>logo.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#centralWidget {
+	background-image: url(mouseui.png);
+	background-color: transparent;
+}
+
+QFrame, QPushButton {
+	background-image: url(nopic.png);
+	background-color: transparent;
+}</string>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="rightMouseButton">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>30</x>
       <y>10</y>
-      <width>341</width>
+      <width>381</width>
       <height>161</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="whatsThis">
+     <string>Right click button....</string>
+    </property>
     <property name="text">
-     <string/>
+     <string>right button</string>
     </property>
    </widget>
    <widget class="QPushButton" name="leftMouseButton">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>30</x>
       <y>290</y>
-      <width>341</width>
+      <width>411</width>
       <height>171</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="whatsThis">
+     <string>Left click button...</string>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
     <property name="text">
-     <string/>
+     <string>left button</string>
     </property>
    </widget>
    <widget class="QPushButton" name="lockButton">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>340</y>
+      <x>630</x>
+      <y>310</y>
       <width>141</width>
       <height>121</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
      <string/>
@@ -67,11 +100,14 @@
    <widget class="QPushButton" name="toggleButton">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>10</y>
+      <x>630</x>
+      <y>30</y>
       <width>141</width>
       <height>121</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
      <string/>
@@ -91,11 +127,14 @@
    <widget class="QFrame" name="scrollFrame">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>50</x>
       <y>180</y>
-      <width>781</width>
+      <width>461</width>
       <height>101</height>
      </rect>
+    </property>
+    <property name="whatsThis">
+     <string>Scroll bar and middle click button...</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -109,22 +148,6 @@
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections>
-  <connection>
-   <sender>rightMouseButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MouseWindow</receiver>
-   <slot>rightMouseButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>294</x>
-     <y>90</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>430</x>
-     <y>77</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>leftMouseButton</sender>
    <signal>clicked()</signal>
