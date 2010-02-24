@@ -58,6 +58,7 @@
    <value key="QtVersionId" type="int" >0</value>
    <value key="addQDumper" type="" ></value>
    <value key="buildConfiguration" type="int" >0</value>
+   <value key="buildDirectory" type="QString" >/home/milo/koodi/MaeRemote/src/gui</value>
   </valuemap>
  </data>
  <data>
@@ -145,7 +146,7 @@
     <value type="QString" >CONFIG+=debug_and_release</value>
    </valuelist>
    <value key="abstractProcess.command" type="QString" >/usr/bin/qmake</value>
-   <value key="abstractProcess.enabled" type="bool" >false</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
    <value key="abstractProcess.workingDirectory" type="QString" >/home/milo/koodi/MaeRemote/src/gui</value>
    <value key="buildConfiguration" type="" ></value>
   </valuemap>
