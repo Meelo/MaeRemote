@@ -163,12 +163,14 @@ public class Driver {
         return coord;
     }
 
-    public void releaseKey(int keycode) {
+    public void holdKey(int keycode) {
+        System.out.println("Holding " + keycode);
         robot.keyPress(keycode);
     }
 
-    public void holdKey(int keycode) {
+    public void releaseKey(int keycode) {
+        System.out.println("Releasing " + keycode);
         robot.keyRelease(keycode);
-        
     }
+
 }
