@@ -11,7 +11,7 @@ void Engine::run()
 	if (client->connectTo(host, port)) {
         std::cout << "Connected!" << std::endl;
         SensorData sensor("/sys/class/i2c-adapter/i2c-3/3-001d/coord");
-        for (int i = 0; i < 2000 && !connectionTerminated; ++i) {
+        while (!connectionTerminated) {
             Engine::msleep(25);
             if (!locked) {
                 sensor.update();
@@ -29,10 +29,10 @@ void Engine::run()
 // pitch = pitch * 180 / M_PI * -1;
 // roll = (roll * 180 / M_PI) + 90;
 
-                if (dx + dy != 0) {
-                    dx = pow(abs(dx), 1.5) * dx / abs(dx);
-                    dy = pow(abs(dy), 1.5) * dy / abs(dy);
-                    client->sendMouseMovement(dy, -dx);
+                if (x + y != 0) {
+                    x = pow(abs(x), 1.5) * x / abs(x);
+                    y = pow(abs(y), 1.5) * y / abs(y);
+                    client->sendMouseMovement(y, -x);
                 }
             }
             else {
