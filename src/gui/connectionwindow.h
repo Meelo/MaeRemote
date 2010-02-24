@@ -51,7 +51,6 @@ private:
     bool listChanged;
     std::vector<ServerData*> data;
     std::vector<MouseWindow*> mouseWindows;
-//    MouseWindow *mouseWindow;
     void readList();
 
 private slots:

@@ -12,10 +12,6 @@ class SensorData
 
     quint64 counter;
 
-    qint16 dx;
-    qint16 dy;
-    qint16 dz;
-
     qint16 x;
     qint16 y;
     qint16 z;
@@ -26,8 +22,7 @@ class SensorData
 
     public:
     SensorData(const QString& filename) : file(filename),
-    counter(0), dx(0), dy(0), dz(0),
-    x(0), y(0), z(0), oldx(0), oldy(0), oldz(0) {}
+    counter(0), x(0), y(0), z(0), oldx(0), oldy(0), oldz(0) {}
 
     bool update()
     {

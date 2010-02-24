@@ -30,7 +30,6 @@ void Scroll::mousePressEvent(QMouseEvent *event)
     counter = 0;
 
     previous = event->x();
-    qDebug() << "pressed!";
 }
 
 void Scroll::mouseReleaseEvent(QMouseEvent *event)
@@ -39,5 +38,4 @@ void Scroll::mouseReleaseEvent(QMouseEvent *event)
         mouseWindow->middleMouseButtonClicked();
     }
     moved = false;
-    qDebug() << "released!";
 }

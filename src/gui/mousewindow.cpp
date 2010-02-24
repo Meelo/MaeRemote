@@ -11,10 +11,6 @@ MouseWindow::MouseWindow(ConnectionWindow* connectionWindow, QWidget *parent)
     ui->setupUi(this);
     Scroll *scroll = new Scroll(ui->scrollFrame);
     scroll->setMouseWindow(this);
-//    ui->leftMouseButton->setStyleSheet("background-color: #dddddd;");
-//    ui->rightMouseButton->setStyleSheet("background-color: #dddddd;");
-//    ui->lockButton->setStyleSheet("background-color: #dddddd;");
-//    ui->toggleButton->setStyleSheet("background-color: #dddddd;");
     open.addFile("openlock_small.png");
     closed.addFile("closedlock_small.png");
     setFocusPolicy(Qt::StrongFocus);
@@ -28,20 +24,17 @@ void MouseWindow::processScrollBarActivity(int delta)
 
 void MouseWindow::middleMouseButtonClicked()
 {
-    qDebug() << "middle";
     engine->sendClick(2);
 }
 
 
 void MouseWindow::leftMouseButtonClicked()
 {
-    qDebug() << "Left button clicked";
     engine->sendClick(1);
 }
 
 void MouseWindow::rightMouseButtonClicked()
 {
-    qDebug() << "Right button clicked";
     engine->sendClick(3);
 }
 
@@ -54,19 +47,16 @@ void MouseWindow::toggleButtonClicked()
     else {
         ui->toggleButton->setIcon(open);
     }
-    qDebug() << engine->isLocked();
 }
 
 void MouseWindow::lockButtonPressed()
 {
     engine->toggleLocked();
-    qDebug() << engine->isLocked();
 }
 
 void MouseWindow::lockButtonReleased()
 {
     engine->toggleLocked();
-    qDebug() << engine->isLocked();
 }
 
 void MouseWindow::closeEvent(QCloseEvent *event)
@@ -97,7 +87,7 @@ void MouseWindow::keyPressEvent (QKeyEvent *event)
     default:
         engine->sendText(event->text().toAscii());
     }
-    qDebug() << "Key pressed: " << event->key() << " as text: " << event->text();
+//    qDebug() << "Key pressed: " << event->key() << " as text: " << event->text();
 }
 
 void MouseWindow::keyReleaseEvent (QKeyEvent *event)
@@ -117,7 +107,7 @@ void MouseWindow::keyReleaseEvent (QKeyEvent *event)
         engine->sendText("__RELEASE_DOWN__");
         break;
     }
-    qDebug() << "Key released: " << event->key() << " as text: " << event->text();
+//    qDebug() << "Key released: " << event->key() << " as text: " << event->text();
 }
 
 MouseWindow::~MouseWindow()
