@@ -37,6 +37,7 @@ public slots:
                 mouseWindows.pop_back();
                 mouseWindow->close();
                 delete mouseWindow;
+                mouseWindow = 0;
                 break;
             }
         }

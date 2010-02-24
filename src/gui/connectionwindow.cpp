@@ -67,9 +67,9 @@ void ConnectionWindow::readList()
 void ConnectionWindow::addServerToList()
 {
     listChanged = true;
-    bool ok;
+    bool ok = false;
     int port = m_ui->portEdit->text().toInt(&ok, 10);
-    if (ok && m_ui->addressEdit->text().length() > 0) {
+    if (ok && !m_ui->addressEdit->text().isEmpty()) {
         ServerData *sd = new ServerData(m_ui->serverList);
         sd->setName(m_ui->addressEdit->text());
         sd->setPort(port);
@@ -91,10 +91,10 @@ void ConnectionWindow::deleteServerFromList()
 
 void ConnectionWindow::connectToServer()
 {
-    bool ok;
+    bool ok = false;
     QString host = m_ui->addressEdit->text();
     int port = m_ui->portEdit->text().toInt(&ok, 10);
-    if (!ok || m_ui->addressEdit->text().length() < 1) {
+    if (ok && !m_ui->addressEdit->text().isEmpty()) {
         for (std::size_t i = 0; i < data.size(); ++i) {
             if (data.at(i)->isSelected()) {
                 host = data.at(i)->getName();

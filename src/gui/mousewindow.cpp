@@ -15,8 +15,8 @@ MouseWindow::MouseWindow(ConnectionWindow* connectionWindow, QWidget *parent)
 //    ui->rightMouseButton->setStyleSheet("background-color: #dddddd;");
 //    ui->lockButton->setStyleSheet("background-color: #dddddd;");
 //    ui->toggleButton->setStyleSheet("background-color: #dddddd;");
-//    open.addFile("openlock_small.png");
-//    closed.addFile("closedlock_small.png");
+    open.addFile("openlock_small.png");
+    closed.addFile("closedlock_small.png");
     setFocusPolicy(Qt::StrongFocus);
 }
 
@@ -25,6 +25,13 @@ void MouseWindow::processScrollBarActivity(int delta)
     qDebug() << delta;
     engine->sendScroll(delta);
 }
+
+void MouseWindow::middleMouseButtonClicked()
+{
+    qDebug() << "middle";
+    engine->sendClick(2);
+}
+
 
 void MouseWindow::leftMouseButtonClicked()
 {
@@ -35,6 +42,7 @@ void MouseWindow::leftMouseButtonClicked()
 void MouseWindow::rightMouseButtonClicked()
 {
     qDebug() << "Right button clicked";
+    engine->sendClick(3);
 }
 
 void MouseWindow::toggleButtonClicked()
@@ -75,7 +83,7 @@ void MouseWindow::keyPressEvent (QKeyEvent *event)
         engine->sendText("__RETURN__");
         break;
     default:
-        engine->sendText(event->text().toLatin1());
+        engine->sendText(event->text().toAscii());
     }
     qDebug() << "Key: " << event->key() << " as text: " << event->text();
 }

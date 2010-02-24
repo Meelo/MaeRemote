@@ -18,130 +18,201 @@
     <normaloff>logo.png</normaloff>logo.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget#centralWidget {
-	background-image: url(mouseui.png);
-	background-color: transparent;
+   <string notr="true">/*
+QWidget {
+background: transparent;
+}
+*/
+
+
+QFrame#scrollFrame {
+background: transparent;
 }
 
-QFrame, QPushButton {
-	background-image: url(nopic.png);
-	background-color: transparent;
-}</string>
+QFrame#buttonHolder {
+background-image: url(mouseui.png);
+
+/*background-color: transparent;*/
+}
+
+QPushButton {
+border: 2px solid black;
+border-radius: 6px;
+background-color: transparent;
+}
+/*
+QPushButton:pressed {
+background-color: transparent;
+}
+
+QPushButton:flat {
+border: none;
+}
+
+QPushButton:default {
+/*border-color: black;
+border: 2px solid black;
+border-radius: 6px;
+background-color: transparent;
+}*/</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="rightMouseButton">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>10</y>
-      <width>381</width>
-      <height>161</height>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>481</height>
      </rect>
     </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="whatsThis">
-     <string>Right click button....</string>
-    </property>
-    <property name="text">
-     <string>right button</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="leftMouseButton">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>290</y>
-      <width>411</width>
-      <height>171</height>
-     </rect>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="whatsThis">
-     <string>Left click button...</string>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string>left button</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="lockButton">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>310</y>
-      <width>141</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normalon>freeze.png</normalon>
-     </iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>110</width>
-      <height>110</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="toggleButton">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>30</y>
-      <width>141</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normalon>openlock_small.png</normalon>
-     </iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>100</width>
-      <height>100</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QFrame" name="scrollFrame">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>180</y>
-      <width>461</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="whatsThis">
-     <string>Scroll bar and middle click button...</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QFrame" name="buttonHolder">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QPushButton" name="toggleButton">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>30</y>
+          <width>141</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>openlock_small.png</normalon>
+         </iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>100</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="rightMouseButton">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>10</y>
+          <width>381</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="whatsThis">
+         <string>Right click button....</string>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>right button</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="leftMouseButton">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>300</y>
+          <width>411</width>
+          <height>161</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="whatsThis">
+         <string>Left click button...</string>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string>left button</string>
+        </property>
+       </widget>
+       <widget class="QFrame" name="scrollFrame">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>190</y>
+          <width>461</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="whatsThis">
+         <string>Scroll bar and middle click button...</string>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="lockButton">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>310</y>
+          <width>141</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>freeze.png</normalon>
+         </iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>110</width>
+          <height>110</height>
+         </size>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
  </widget>
@@ -155,28 +226,12 @@ QFrame, QPushButton {
    <slot>leftMouseButtonClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>246</x>
-     <y>375</y>
+     <x>387</x>
+     <y>392</y>
     </hint>
     <hint type="destinationlabel">
-     <x>430</x>
-     <y>369</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>toggleButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MouseWindow</receiver>
-   <slot>toggleButtonClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>695</x>
-     <y>112</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>534</x>
-     <y>117</y>
+     <x>510</x>
+     <y>487</y>
     </hint>
    </hints>
   </connection>
@@ -187,12 +242,12 @@ QFrame, QPushButton {
    <slot>lockButtonPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>682</x>
-     <y>370</y>
+     <x>707</x>
+     <y>393</y>
     </hint>
     <hint type="destinationlabel">
-     <x>569</x>
-     <y>308</y>
+     <x>813</x>
+     <y>373</y>
     </hint>
    </hints>
   </connection>
@@ -203,12 +258,44 @@ QFrame, QPushButton {
    <slot>lockButtonReleased()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>684</x>
-     <y>428</y>
+     <x>661</x>
+     <y>378</y>
     </hint>
     <hint type="destinationlabel">
-     <x>540</x>
-     <y>413</y>
+     <x>751</x>
+     <y>498</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toggleButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MouseWindow</receiver>
+   <slot>toggleButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>722</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>814</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rightMouseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MouseWindow</receiver>
+   <slot>rightMouseButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>378</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>469</x>
+     <y>491</y>
     </hint>
    </hints>
   </connection>

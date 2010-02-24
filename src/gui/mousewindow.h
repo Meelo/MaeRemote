@@ -24,6 +24,7 @@ public:
 
 public slots:
     void leftMouseButtonClicked();
+    void middleMouseButtonClicked();
     void rightMouseButtonClicked();
     void toggleButtonClicked();
     void lockButtonPressed();

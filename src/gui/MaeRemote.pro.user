@@ -66,76 +66,70 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList" >
     <value type="QString" >ANT_HOME=/usr/share/ant</value>
-    <value type="QString" >AUDIODEV=default</value>
-    <value type="QString" >CG_COMPILER_EXE=/usr/bin/cgc</value>
     <value type="QString" >COLORFGBG=15;0</value>
     <value type="QString" >CONFIG_PROTECT=/usr/share/X11/xkb /var/lib/hsqldb /usr/share/config</value>
     <value type="QString" >CONFIG_PROTECT_MASK=/etc/gentoo-release /etc/sandbox.d /etc/env.d/java/ /etc/udev/rules.d /etc/fonts/fonts.conf /etc/gconf /etc/terminfo /etc/ca-certificates.conf /etc/texmf/web2c /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/revdep-rebuild</value>
     <value type="QString" >CVS_RSH=ssh</value>
-    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-X3bc78VsXU,guid=cf21a6e46c4ed5e1722b8f414b807070</value>
-    <value type="QString" >DESKTOP_SESSION=KDE-4</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-006fLgBb0O,guid=6304e6950be3c96b8d4b96394b8514e5</value>
+    <value type="QString" >DESKTOP_SESSION=default</value>
     <value type="QString" >DESKTOP_STARTUP_ID=</value>
     <value type="QString" >DISPLAY=:0</value>
     <value type="QString" >DM_CONTROL=/var/run/xdmctl</value>
-    <value type="QString" >EDITOR=/usr/bin/vim</value>
-    <value type="QString" >FLTK_DOCDIR=/usr/share/doc/fltk-2.0_pre6786-r1/html</value>
+    <value type="QString" >EDITOR=/bin/nano</value>
     <value type="QString" >GCC_SPECS=</value>
     <value type="QString" >GDK_USE_XFT=1</value>
-    <value type="QString" >GIT_SSL_NO_VERIFY=true</value>
+    <value type="QString" >GENERATION=2</value>
     <value type="QString" >GS_LIB=/home/milo/.fonts</value>
-    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/milo/.gtkrc-2.0:/home/milo/.gtkrc-2.0-kde4:/home/milo/.kde4/share/config/gtkrc-2.0</value>
+    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/milo/.gtkrc-2.0::/home/milo/.kde4/share/config/gtkrc-2.0</value>
     <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/milo/.gtkrc::/home/milo/.kde4/share/config/gtkrc</value>
-    <value type="QString" >GUILE_LOAD_PATH=/usr/share/guile/1.8</value>
     <value type="QString" >HOME=/home/milo</value>
-    <value type="QString" >INFOPATH=/usr/share/info:/usr/share/binutils-data/x86_64-pc-linux-gnu/2.18/info:/usr/share/gcc-data/x86_64-pc-linux-gnu/4.3.4/info:/usr/share/info/emacs-23</value>
-    <value type="QString" >JAVAC=/home/milo/.gentoo/java-config-2/current-user-vm/bin/javac</value>
+    <value type="QString" >INFOPATH=/usr/share/info:/usr/share/binutils-data/i686-pc-linux-gnu/2.18/info:/usr/share/gcc-data/i486-pc-linux-gnu/4.1.2/info:/usr/share/gcc-data/i686-pc-linux-gnu/4.3.4/info</value>
+    <value type="QString" >JAVAC=/etc/java-config-2/current-system-vm/bin/javac</value>
     <value type="QString" >JAVACC_HOME=/usr/share/javacc/</value>
-    <value type="QString" >JAVA_HOME=/home/milo/.gentoo/java-config-2/current-user-vm</value>
-    <value type="QString" >JDK_HOME=/home/milo/.gentoo/java-config-2/current-user-vm</value>
-    <value type="QString" >KDEWM=kwin</value>
+    <value type="QString" >JAVA_HOME=/etc/java-config-2/current-system-vm</value>
+    <value type="QString" >JDK_HOME=/etc/java-config-2/current-system-vm</value>
     <value type="QString" >KDE_FULL_SESSION=true</value>
     <value type="QString" >KDE_MULTIHEAD=false</value>
     <value type="QString" >KDE_SESSION_UID=1000</value>
     <value type="QString" >KDE_SESSION_VERSION=4</value>
-    <value type="QString" >KONSOLE_DBUS_SERVICE=:1.33</value>
+    <value type="QString" >KONSOLE_DBUS_SERVICE=:1.29</value>
     <value type="QString" >KONSOLE_DBUS_SESSION=/Sessions/3</value>
     <value type="QString" >LANGUAGE=</value>
     <value type="QString" >LESS=-R -M --shift 5</value>
     <value type="QString" >LESSOPEN=|lesspipe.sh %s</value>
+    <value type="QString" >LIBGL_DRIVERS_PATH=/usr/lib/dri</value>
     <value type="QString" >LOGNAME=milo</value>
     <value type="QString" >LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.pdf=00;32:*.ps=00;32:*.txt=00;32:*.patch=00;32:*.diff=00;32:*.log=00;32:*.tex=00;32:*.doc=00;32:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:</value>
-    <value type="QString" >MANPATH=/home/milo/.gentoo/java-config-2/current-user-vm/man:/usr/local/share/man:/usr/share/man:/usr/share/binutils-data/x86_64-pc-linux-gnu/2.18/man:/usr/share/gcc-data/x86_64-pc-linux-gnu/4.3.4/man:/etc/java-config/system-vm/man/:/usr/qt/3/doc/man</value>
+    <value type="QString" >MANPATH=/etc/java-config-2/current-system-vm/man:/usr/local/share/man:/usr/share/man:/usr/share/binutils-data/i686-pc-linux-gnu/2.18/man:/usr/share/gcc-data/i486-pc-linux-gnu/4.1.2/man:/usr/share/gcc-data/i686-pc-linux-gnu/4.3.4/man:/opt/blackdown-jdk-1.4.2.03/man:/etc/java-config/system-vm/man/</value>
     <value type="QString" >OLDPWD=/home/milo/koodi/MaeRemote/src</value>
-    <value type="QString" >OPENGL_PROFILE=nvidia</value>
+    <value type="QString" >OPENGL_PROFILE=ati</value>
+    <value type="QString" >ORBIT_SOCKETDIR=/tmp/orbit-milo</value>
     <value type="QString" >PAGER=/usr/bin/less</value>
-    <value type="QString" >PATH=/usr/bin:/home/milo/.gem/ruby/1.8/bin:/home/milo/.gem/ruby/1.8/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.3.4:/usr/qt/3/bin:/usr/games/bin</value>
+    <value type="QString" >PATH=/usr/bin:/home/milo/bin:/home/milo/bin:/home/milo/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/i486-pc-linux-gnu/gcc-bin/4.1.2:/usr/i686-pc-linux-gnu/gcc-bin/4.3.4:/opt/blackdown-jdk-1.4.2.03/bin:/opt/blackdown-jdk-1.4.2.03/jre/bin:/usr/games/bin</value>
     <value type="QString" >PROFILEHOME=</value>
     <value type="QString" >PWD=/home/milo/koodi/MaeRemote/src/gui</value>
-    <value type="QString" >QMAKESPEC=linux-g++</value>
     <value type="QString" >QTDIR=/usr</value>
-    <value type="QString" >QT_PLUGIN_PATH=/home/milo/.kde4/lib64/kde4/plugins/:/usr/lib64/kde4/plugins/</value>
-    <value type="QString" >RUBYOPT=-rauto_gem</value>
+    <value type="QString" >QT_PLUGIN_PATH=/home/milo/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
     <value type="QString" >SANE_CONFIG_DIR=/etc/sane.d</value>
-    <value type="QString" >SDL_AUDIODRIVER=alsa</value>
-    <value type="QString" >SESSION_MANAGER=local/meelo:@/tmp/.ICE-unix/3768,unix/meelo:/tmp/.ICE-unix/3768</value>
+    <value type="QString" >SESSION_MANAGER=local/meelotop:@/tmp/.ICE-unix/4998,unix/meelotop:/tmp/.ICE-unix/4998</value>
     <value type="QString" >SHELL=/bin/bash</value>
     <value type="QString" >SHLVL=2</value>
-    <value type="QString" >SSH_AGENT_PID=29832</value>
-    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-djfnR29830/agent.29830</value>
-    <value type="QString" >STRIGI_PLUGIN_PATH=/usr/lib64/strigi:</value>
+    <value type="QString" >SSH_AGENT_PID=4835</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-ZgyJEl4833/agent.4833</value>
+    <value type="QString" >STRIGI_PLUGIN_PATH=/usr/lib/strigi:</value>
     <value type="QString" >TERM=xterm</value>
     <value type="QString" >USB_DEVFS_PATH=/dev/bus/usb</value>
     <value type="QString" >USER=milo</value>
-    <value type="QString" >WINDOWID=41943067</value>
+    <value type="QString" >VISUAL=/usr/bin/vi</value>
+    <value type="QString" >VMHANDLE=blackdown-jdk-1.4.2</value>
+    <value type="QString" >WINDOWID=39845911</value>
     <value type="QString" >WINDOWPATH=7</value>
     <value type="QString" >XCURSOR_THEME=#kde_legacy#</value>
     <value type="QString" >XDG_CONFIG_DIRS=/etc/xdg</value>
     <value type="QString" >XDG_DATA_DIRS=/usr/share:/usr/local/share:/usr/share</value>
-    <value type="QString" >XDG_SESSION_COOKIE=3f2b80c8c706d8a96635dc0045ef978a-1266708582.698256-2096829790</value>
+    <value type="QString" >XDG_SESSION_COOKIE=afa9f058c2210ac6de67918949de1d45-1267012836.259589-182579592</value>
     <value type="QString" >XDM_MANAGED=method=classic</value>
-    <value type="QString" >XSESSION=KDE-4</value>
     <value type="QString" >_=/usr/bin/qtcreator</value>
-    <value type="QString" >bash4=4.0.35(2)-release</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
     <value type="QString" >/home/milo/koodi/MaeRemote/src/gui/MaeRemote.pro</value>
@@ -145,7 +139,7 @@
     <value type="QString" >CONFIG+=debug_and_release</value>
    </valuelist>
    <value key="abstractProcess.command" type="QString" >/usr/bin/qmake</value>
-   <value key="abstractProcess.enabled" type="bool" >false</value>
+   <value key="abstractProcess.enabled" type="bool" >true</value>
    <value key="abstractProcess.workingDirectory" type="QString" >/home/milo/koodi/MaeRemote/src/gui</value>
    <value key="buildConfiguration" type="" ></value>
   </valuemap>
@@ -156,76 +150,70 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList" >
     <value type="QString" >ANT_HOME=/usr/share/ant</value>
-    <value type="QString" >AUDIODEV=default</value>
-    <value type="QString" >CG_COMPILER_EXE=/usr/bin/cgc</value>
     <value type="QString" >COLORFGBG=15;0</value>
     <value type="QString" >CONFIG_PROTECT=/usr/share/X11/xkb /var/lib/hsqldb /usr/share/config</value>
     <value type="QString" >CONFIG_PROTECT_MASK=/etc/gentoo-release /etc/sandbox.d /etc/env.d/java/ /etc/udev/rules.d /etc/fonts/fonts.conf /etc/gconf /etc/terminfo /etc/ca-certificates.conf /etc/texmf/web2c /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/revdep-rebuild</value>
     <value type="QString" >CVS_RSH=ssh</value>
-    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-X3bc78VsXU,guid=cf21a6e46c4ed5e1722b8f414b807070</value>
-    <value type="QString" >DESKTOP_SESSION=KDE-4</value>
+    <value type="QString" >DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-006fLgBb0O,guid=6304e6950be3c96b8d4b96394b8514e5</value>
+    <value type="QString" >DESKTOP_SESSION=default</value>
     <value type="QString" >DESKTOP_STARTUP_ID=</value>
     <value type="QString" >DISPLAY=:0</value>
     <value type="QString" >DM_CONTROL=/var/run/xdmctl</value>
-    <value type="QString" >EDITOR=/usr/bin/vim</value>
-    <value type="QString" >FLTK_DOCDIR=/usr/share/doc/fltk-2.0_pre6786-r1/html</value>
+    <value type="QString" >EDITOR=/bin/nano</value>
     <value type="QString" >GCC_SPECS=</value>
     <value type="QString" >GDK_USE_XFT=1</value>
-    <value type="QString" >GIT_SSL_NO_VERIFY=true</value>
+    <value type="QString" >GENERATION=2</value>
     <value type="QString" >GS_LIB=/home/milo/.fonts</value>
-    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/milo/.gtkrc-2.0:/home/milo/.gtkrc-2.0-kde4:/home/milo/.kde4/share/config/gtkrc-2.0</value>
+    <value type="QString" >GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/milo/.gtkrc-2.0::/home/milo/.kde4/share/config/gtkrc-2.0</value>
     <value type="QString" >GTK_RC_FILES=/etc/gtk/gtkrc:/home/milo/.gtkrc::/home/milo/.kde4/share/config/gtkrc</value>
-    <value type="QString" >GUILE_LOAD_PATH=/usr/share/guile/1.8</value>
     <value type="QString" >HOME=/home/milo</value>
-    <value type="QString" >INFOPATH=/usr/share/info:/usr/share/binutils-data/x86_64-pc-linux-gnu/2.18/info:/usr/share/gcc-data/x86_64-pc-linux-gnu/4.3.4/info:/usr/share/info/emacs-23</value>
-    <value type="QString" >JAVAC=/home/milo/.gentoo/java-config-2/current-user-vm/bin/javac</value>
+    <value type="QString" >INFOPATH=/usr/share/info:/usr/share/binutils-data/i686-pc-linux-gnu/2.18/info:/usr/share/gcc-data/i486-pc-linux-gnu/4.1.2/info:/usr/share/gcc-data/i686-pc-linux-gnu/4.3.4/info</value>
+    <value type="QString" >JAVAC=/etc/java-config-2/current-system-vm/bin/javac</value>
     <value type="QString" >JAVACC_HOME=/usr/share/javacc/</value>
-    <value type="QString" >JAVA_HOME=/home/milo/.gentoo/java-config-2/current-user-vm</value>
-    <value type="QString" >JDK_HOME=/home/milo/.gentoo/java-config-2/current-user-vm</value>
-    <value type="QString" >KDEWM=kwin</value>
+    <value type="QString" >JAVA_HOME=/etc/java-config-2/current-system-vm</value>
+    <value type="QString" >JDK_HOME=/etc/java-config-2/current-system-vm</value>
     <value type="QString" >KDE_FULL_SESSION=true</value>
     <value type="QString" >KDE_MULTIHEAD=false</value>
     <value type="QString" >KDE_SESSION_UID=1000</value>
     <value type="QString" >KDE_SESSION_VERSION=4</value>
-    <value type="QString" >KONSOLE_DBUS_SERVICE=:1.33</value>
+    <value type="QString" >KONSOLE_DBUS_SERVICE=:1.29</value>
     <value type="QString" >KONSOLE_DBUS_SESSION=/Sessions/3</value>
     <value type="QString" >LANGUAGE=</value>
     <value type="QString" >LESS=-R -M --shift 5</value>
     <value type="QString" >LESSOPEN=|lesspipe.sh %s</value>
+    <value type="QString" >LIBGL_DRIVERS_PATH=/usr/lib/dri</value>
     <value type="QString" >LOGNAME=milo</value>
     <value type="QString" >LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.pdf=00;32:*.ps=00;32:*.txt=00;32:*.patch=00;32:*.diff=00;32:*.log=00;32:*.tex=00;32:*.doc=00;32:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:</value>
-    <value type="QString" >MANPATH=/home/milo/.gentoo/java-config-2/current-user-vm/man:/usr/local/share/man:/usr/share/man:/usr/share/binutils-data/x86_64-pc-linux-gnu/2.18/man:/usr/share/gcc-data/x86_64-pc-linux-gnu/4.3.4/man:/etc/java-config/system-vm/man/:/usr/qt/3/doc/man</value>
+    <value type="QString" >MANPATH=/etc/java-config-2/current-system-vm/man:/usr/local/share/man:/usr/share/man:/usr/share/binutils-data/i686-pc-linux-gnu/2.18/man:/usr/share/gcc-data/i486-pc-linux-gnu/4.1.2/man:/usr/share/gcc-data/i686-pc-linux-gnu/4.3.4/man:/opt/blackdown-jdk-1.4.2.03/man:/etc/java-config/system-vm/man/</value>
     <value type="QString" >OLDPWD=/home/milo/koodi/MaeRemote/src</value>
-    <value type="QString" >OPENGL_PROFILE=nvidia</value>
+    <value type="QString" >OPENGL_PROFILE=ati</value>
+    <value type="QString" >ORBIT_SOCKETDIR=/tmp/orbit-milo</value>
     <value type="QString" >PAGER=/usr/bin/less</value>
-    <value type="QString" >PATH=/usr/bin:/home/milo/.gem/ruby/1.8/bin:/home/milo/.gem/ruby/1.8/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.3.4:/usr/qt/3/bin:/usr/games/bin</value>
+    <value type="QString" >PATH=/usr/bin:/home/milo/bin:/home/milo/bin:/home/milo/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/i486-pc-linux-gnu/gcc-bin/4.1.2:/usr/i686-pc-linux-gnu/gcc-bin/4.3.4:/opt/blackdown-jdk-1.4.2.03/bin:/opt/blackdown-jdk-1.4.2.03/jre/bin:/usr/games/bin</value>
     <value type="QString" >PROFILEHOME=</value>
     <value type="QString" >PWD=/home/milo/koodi/MaeRemote/src/gui</value>
-    <value type="QString" >QMAKESPEC=linux-g++</value>
     <value type="QString" >QTDIR=/usr</value>
-    <value type="QString" >QT_PLUGIN_PATH=/home/milo/.kde4/lib64/kde4/plugins/:/usr/lib64/kde4/plugins/</value>
-    <value type="QString" >RUBYOPT=-rauto_gem</value>
+    <value type="QString" >QT_PLUGIN_PATH=/home/milo/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/</value>
     <value type="QString" >SANE_CONFIG_DIR=/etc/sane.d</value>
-    <value type="QString" >SDL_AUDIODRIVER=alsa</value>
-    <value type="QString" >SESSION_MANAGER=local/meelo:@/tmp/.ICE-unix/3768,unix/meelo:/tmp/.ICE-unix/3768</value>
+    <value type="QString" >SESSION_MANAGER=local/meelotop:@/tmp/.ICE-unix/4998,unix/meelotop:/tmp/.ICE-unix/4998</value>
     <value type="QString" >SHELL=/bin/bash</value>
     <value type="QString" >SHLVL=2</value>
-    <value type="QString" >SSH_AGENT_PID=29832</value>
-    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-djfnR29830/agent.29830</value>
-    <value type="QString" >STRIGI_PLUGIN_PATH=/usr/lib64/strigi:</value>
+    <value type="QString" >SSH_AGENT_PID=4835</value>
+    <value type="QString" >SSH_AUTH_SOCK=/tmp/ssh-ZgyJEl4833/agent.4833</value>
+    <value type="QString" >STRIGI_PLUGIN_PATH=/usr/lib/strigi:</value>
     <value type="QString" >TERM=xterm</value>
     <value type="QString" >USB_DEVFS_PATH=/dev/bus/usb</value>
     <value type="QString" >USER=milo</value>
-    <value type="QString" >WINDOWID=41943067</value>
+    <value type="QString" >VISUAL=/usr/bin/vi</value>
+    <value type="QString" >VMHANDLE=blackdown-jdk-1.4.2</value>
+    <value type="QString" >WINDOWID=39845911</value>
     <value type="QString" >WINDOWPATH=7</value>
     <value type="QString" >XCURSOR_THEME=#kde_legacy#</value>
     <value type="QString" >XDG_CONFIG_DIRS=/etc/xdg</value>
     <value type="QString" >XDG_DATA_DIRS=/usr/share:/usr/local/share:/usr/share</value>
-    <value type="QString" >XDG_SESSION_COOKIE=3f2b80c8c706d8a96635dc0045ef978a-1266708582.698256-2096829790</value>
+    <value type="QString" >XDG_SESSION_COOKIE=afa9f058c2210ac6de67918949de1d45-1267012836.259589-182579592</value>
     <value type="QString" >XDM_MANAGED=method=classic</value>
-    <value type="QString" >XSESSION=KDE-4</value>
     <value type="QString" >_=/usr/bin/qtcreator</value>
-    <value type="QString" >bash4=4.0.35(2)-release</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool" >false</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
