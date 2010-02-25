@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.1
+Type=Application
+Name=Mad Qt example
+Exec=/usr/bin/maeremote
+Icon=maeremote
+X-HildonDesk-ShowInToolbar=true
+X-Window-Icon=maeremote
+X-Window-Icon-Dimmed=maeremote
+X-Osso-Type=application/x-executable
+X-Osso-Service=com.nokia.maeremote

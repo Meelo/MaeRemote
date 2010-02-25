@@ -1,0 +1,27 @@
+Package: maeremote
+Version: 1.3.3.8
+Architecture: armel
+Maintainer: unknown <milo@unknown>
+Installed-Size: 188
+Depends: libc6 (>= 2.5.0-1), libgcc1 (>= 1:4.2.1), libqt4-core (>= 4.5.3~git20090723), libqt4-gui (>= 4.5.3~git20090723), libqt4-network (>= 4.5.3~git20090723), libstdc++6 (>= 4.2.1)
+Section: user/Other
+Priority: extra
+Homepage: <insert the upstream URL, if relevant>
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+Maemo-Icon-26: 
+ iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A
+ /wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oBGQ0SFuv48p0AAAAZdEVYdENv
+ bW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAACp0lEQVRo3u2Yz0tVURDHv08dK4r2GUmWELSI
+ sMCCSHdluS0QIWtXVIt20Z/QPm1R0D5a92OnRAqKllRkP6BFEQhZSIr1wffazIXD9d5nT6+ZdL4w
+ 3HNn7vnOmTk/3rwjRUREREQUCeA8UHHpK4Av4eoJdD2Jfi0CGA6cPiswgA+AAY3eLiSAupSzA5KO
+ SHoh6bWko64LB5LIG6BtOVuATZIuujRWCbQCLACjwLEc/hngcla2+oFpoBnYD8wBt1IkJ4Aub4/X
+ YOtz7mngXN4MAPXAIbe/T3GcAfZ5e1aSSkHHbZI+S9qe4pyV1CTpR5DJkqQFSZhZYzCQarZ6SWOS
+ KpIOSypLkpmV3P8VSdckNUtq8D4VM6sLOBrMbDF5N7NSQzDQHh/8kJl1OOmgpONuS9ARLL1XqWBz
+ bWZWltQWJCyd/JuStkg66M/hMMHOsVhts4351PQGul7XjWWsw6kqe2CJLW/NB+/Xga9prpxvaz8A
+ qnVasyOx1lMoIiJi5Rt5vRA38YZdQsBO4D7wLaXfAzz0OmoOeAS01FSU/aUAnvr7VaAx+GYko7Ab
+ Wa4oWylKtQaQFFHAL0kmaauZzQff4MVYtcJuSVG2Hpt41J8XAAv040Fh1+ntiT8uyv7iEtoFPAC+
+ p/StwGNg3uUJsLewoiwiIiJiQ5UONzKOvi5g3O9uFoAJoPuf8+MEnzKIZ1zXFtzfzKxi8KvyU5dD
+ 2irpnqSzGeZ3/iwndzuSpjI4brvT00C3tweK9pOXlZfApZxfzxbgbeoKZXcGhwFDwBeXwVTJUYif
+ 5S5ks+5oJjOmdjKHpz3o374WfjKXkJmVEgl13mwKpjbJ2I6MwW2WNCDpo0u/6wr1U/P/YOAU8Bz4
+ 6TIBnMzodxcoA50uZeBO0X4iIiIiIv5v/AZU3LjyjeB2pwAAAABJRU5ErkJggg==

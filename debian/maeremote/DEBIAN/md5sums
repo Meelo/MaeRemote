@@ -1,0 +1,7 @@
+e69680bdd7c7510990ea448c0dbab0cd  opt/maeremote/bin/MaeRemote
+34a31fe93c88f33a55f6308232b1b5a5  usr/share/applications/hildon/maeremote.desktop
+63439b96c976952afacc66627ed6f21e  usr/share/dbus-1/services/maeremote.service
+132b49e73553676918c695cba3ab264f  usr/share/icons/hicolor/64x64/apps/maeremote.png
+280414bd9dccaab1dfcf76d938b1c1dd  usr/share/doc/maeremote/README.Debian
+a3f5ff45c496640138cd7a0ed1fdcecc  usr/share/doc/maeremote/copyright
+1a401b17cd50602f783f2a4b190595ba  usr/share/doc/maeremote/changelog.gz

@@ -1,0 +1,35 @@
+Source: maeremote
+Section: user/Other
+Priority: extra
+Maintainer: unknown <milo@unknown>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.3
+Homepage: <insert the upstream URL, if relevant>
+
+Package: maeremote
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
+# XB-Maemo-Icon-26 field contains the application icon file encoded in
+# base64. This is the icon that is shown in the Application Manager,
+# next to the package name. To perform this encoding use following mad
+# command: $ mad base64 <48x48 icon file name>
+# For example following XB-Maemo-Icon-26 field content is an output
+# from command: $ mad base64 maeremote/src/data/48x48/maeremote.png
+XB-Maemo-Icon-26:
+ iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A
+ /wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oBGQ0SFuv48p0AAAAZdEVYdENv
+ bW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAACp0lEQVRo3u2Yz0tVURDHv08dK4r2GUmWELSI
+ sMCCSHdluS0QIWtXVIt20Z/QPm1R0D5a92OnRAqKllRkP6BFEQhZSIr1wffazIXD9d5nT6+ZdL4w
+ 3HNn7vnOmTk/3rwjRUREREQUCeA8UHHpK4Av4eoJdD2Jfi0CGA6cPiswgA+AAY3eLiSAupSzA5KO
+ SHoh6bWko64LB5LIG6BtOVuATZIuujRWCbQCLACjwLEc/hngcla2+oFpoBnYD8wBt1IkJ4Aub4/X
+ YOtz7mngXN4MAPXAIbe/T3GcAfZ5e1aSSkHHbZI+S9qe4pyV1CTpR5DJkqQFSZhZYzCQarZ6SWOS
+ KpIOSypLkpmV3P8VSdckNUtq8D4VM6sLOBrMbDF5N7NSQzDQHh/8kJl1OOmgpONuS9ARLL1XqWBz
+ bWZWltQWJCyd/JuStkg66M/hMMHOsVhts4351PQGul7XjWWsw6kqe2CJLW/NB+/Xga9prpxvaz8A
+ qnVasyOx1lMoIiJi5Rt5vRA38YZdQsBO4D7wLaXfAzz0OmoOeAS01FSU/aUAnvr7VaAx+GYko7Ab
+ Wa4oWylKtQaQFFHAL0kmaauZzQff4MVYtcJuSVG2Hpt41J8XAAv040Fh1+ntiT8uyv7iEtoFPAC+
+ p/StwGNg3uUJsLewoiwiIiJiQ5UONzKOvi5g3O9uFoAJoPuf8+MEnzKIZ1zXFtzfzKxi8KvyU5dD
+ 2irpnqSzGeZ3/iwndzuSpjI4brvT00C3tweK9pOXlZfApZxfzxbgbeoKZXcGhwFDwBeXwVTJUYif
+ 5S5ks+5oJjOmdjKHpz3o374WfjKXkJmVEgl13mwKpjbJ2I6MwW2WNCDpo0u/6wr1U/P/YOAU8Bz4
+ 6TIBnMzodxcoA50uZeBO0X4iIiIiIv5v/AZU3LjyjeB2pwAAAABJRU5ErkJggg==
