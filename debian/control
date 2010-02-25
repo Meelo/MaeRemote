@@ -1,16 +1,18 @@
 Source: maeremote
 Section: user/Other
 Priority: extra
-Maintainer: unknown <milo@unknown>
+Maintainer: Niko Hämäläinen <milo@meelo.org>
 Build-Depends: debhelper (>= 5)
 Standards-Version: 3.7.3
-Homepage: <insert the upstream URL, if relevant>
+Homepage: http://github.com/Meelo/MaeRemote
 
 Package: maeremote
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Description: TCP-based Remote control 
+    TCP-based Remote Control for N900. Control your mouse and keyboard remotely
+    through TCP/IP network. Homepage also has the Java-server which listens
+    to the N900 client's commands. Movement is based on accelerometer readings.
 # XB-Maemo-Icon-26 field contains the application icon file encoded in
 # base64. This is the icon that is shown in the Application Manager,
 # next to the package name. To perform this encoding use following mad
